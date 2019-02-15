@@ -3,6 +3,13 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import Buefy from 'buefy'
+import 'buefy/dist/buefy.css'
+import basscss from 'basscss/src/basscss.css'
+
+Vue.use(Buefy, {
+  defaultIconPack: 'fa'
+})
 
 Vue.config.productionTip = false
 
