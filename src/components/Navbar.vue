@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar p2" role="navigation" aria-label="main navigation">
+  <nav class="navbar p1" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <router-link to="/" class="navbar-item">
         <img src="../assets/logo.png" height="28">
@@ -13,16 +13,6 @@
     </div>
 
     <div id="navbarBasic" class="navbar-menu">
-      <div class="navbar-start">
-        <a class="navbar-item">
-          Home
-        </a>
-
-        <a class="navbar-item">
-          Documentation
-        </a>
-      </div>
-
       <div class="navbar-end">
         <div class="navbar-item">
           <div class="buttons">

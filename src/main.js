@@ -6,6 +6,9 @@ import router from './router'
 import Buefy from 'buefy'
 import 'buefy/dist/buefy.css'
 import basscss from 'basscss/src/basscss.css'
+import VueCarousel from 'vue-carousel';
+
+Vue.use(VueCarousel);
 
 Vue.use(Buefy, {
   defaultIconPack: 'fa'
