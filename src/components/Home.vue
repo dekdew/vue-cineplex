@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div style="background-color:#f5f7fb;">
     <HomeCarousel :slides="slides" />
-    <div class="container my4">
+    <div class="container py4">
       <div class="columns is-multiline m0 p0 is-centered">
         <div v-for="movie in movies" :key="movie" class="column is-4">
           <MovieCard :movie="movie" />
@@ -29,8 +29,5 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.box {
-  margin-top: -3em;
 
-}
 </style>

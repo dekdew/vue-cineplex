@@ -76,7 +76,7 @@ movies = [{
     poster: "https://image.tmdb.org/t/p/original/whtt9F8PFqvEgc4fDSHZPkitFk4.jpg",
     director: "Christopher Landon",
     actors: "Israel Broussard, Ruby Modine, Jessica Rothe",
-    categories: [9],
+    categories: [11, 9],
   },
   {
     id: 3,
@@ -84,7 +84,7 @@ movies = [{
       en: "Alita Battle Angel",
       th: "อลิตา แบทเทิล แองเจิ้ล"
     },
-    poster: "https://image.tmdb.org/t/p/original/8LyWVwDbU4vsOwns8RxOB9aX73l.jpg",
+    poster: "https://image.tmdb.org/t/p/original/8ConJ03HoRTwHpdvtwqnMd2uffC.jpg",
     director: "โรเบิร์ต รอดริเกซ",
     actors: "โรซา ซาลาซาร์, อีซา กอนซาเลซ, เจนนิเฟอร์ คอนเนลลี",
     categories: [1, 2, 12],
@@ -92,7 +92,7 @@ movies = [{
   {
     id: 4,
     name: {
-      en: "The Lego Movie 2: The Second Part",
+      en: "The Lego Movie 2",
       th: "เดอะ เลโก้ มูฟวี่ 2"
     },
     poster: "https://image.tmdb.org/t/p/original/QTESAsBVZwjtGJNDP7utiGV37z.jpg",
@@ -109,7 +109,7 @@ movies = [{
     poster: "https://image.tmdb.org/t/p/original/ij0xoc13hGhrYIlXGGuPXWTh3vi.jpg",
     director: "ดีน เดอบลัวส์",
     actors: "เคต แบลนเชตต์, ที.เจ. มิลเลอร์, เจอราร์ด บัตเลอร์",
-    categories: [3],
+    categories: [2, 3],
   },
   {
     id: 6,
