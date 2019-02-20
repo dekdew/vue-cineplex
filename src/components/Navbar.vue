@@ -16,7 +16,7 @@
       <div class="navbar-end">
         <div class="navbar-item">
           <div class="buttons">
-            <router-link to="/signup" class="button is-warning">
+            <router-link to="/signup" class="button is-info">
               <strong>Sign up</strong>
             </router-link>
             <router-link to="/login" class="button">
