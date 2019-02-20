@@ -11,8 +11,10 @@
             <strong>GET TICKETS</strong>
             <img src="../../assets/ticket.svg" width="40px">
           </a>
-          <p class="more">
-            <a>View Details</a>
+          <p>
+          <router-link :to="`/movie/` + slide.id" class="more has-text-white">
+            View Details
+          </router-link>
           </p>
         </div>
       </div>
@@ -77,12 +79,5 @@ export default {
 .inner img {
   position: absolute;
   right: 20px;
-}
-a {
-  color: #fff;
-}
-.more a:hover {
-  color: #fff;
-  text-shadow: 0px 0px 5px #fff5;
 }
 </style>
