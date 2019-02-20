@@ -9,7 +9,7 @@ import basscss from 'basscss/src/basscss.css'
 import VueCarousel from 'vue-carousel';
 require("./api/data")
 
-Vue.use(VueCarousel);
+Vue.use(VueCarousel)
 
 Vue.use(Buefy, {
   defaultIconPack: 'fa'

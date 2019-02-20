@@ -158,10 +158,10 @@ slides = [{
   },
   {
     id: 5,
-    title: 'Glass',
-    genre: 'Action',
-    time: '130 Mins',
-    releaseDate: '16 January 2019',
+    title: 'Bohemian Rhapsody',
+    genre: 'Biography',
+    time: '135 Mins',
+    releaseDate: '01 November 2018',
     url: c05
   }
 ];
