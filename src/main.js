@@ -7,6 +7,7 @@ import Buefy from 'buefy'
 import 'buefy/dist/buefy.css'
 import basscss from 'basscss/src/basscss.css'
 import VueCarousel from 'vue-carousel';
+require("./api/data")
 
 Vue.use(VueCarousel);
 

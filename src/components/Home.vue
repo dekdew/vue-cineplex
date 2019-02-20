@@ -1,16 +1,27 @@
 <template>
   <div>
-    <HomeCarousel />
+    <HomeCarousel :slides="slides" />
+    <div class="container my4">
+      <div class="columns is-multiline m0 p0 is-centered">
+        <div v-for="movie in movies" :key="movie" class="column is-4">
+          <MovieCard :movie="movie" />
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import HomeCarousel from '@/components/homeComponents/HomeCarousel'
+import MovieCard from '@/components/homeComponents/MovieCard'
+
 export default {
   name: 'Home',
-  components: {HomeCarousel},
+  components: {HomeCarousel, MovieCard},
   data () {
     return {
+      slides: slides,
+      movies: movies
     }
   }
 }
