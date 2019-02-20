@@ -11,7 +11,7 @@
             <strong>GET TICKETS</strong>
             <img src="../../assets/ticket.svg" width="40px">
           </a>
-          <p class="more underline">
+          <p class="more">
             <a>View Details</a>
           </p>
         </div>
