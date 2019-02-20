@@ -1,14 +1,14 @@
 <template>
-  <div style="background-color:#f5f7fb;">
-    <HomeCarousel :slides="slides" />
-    <div class="container py4">
-      <div class="columns is-multiline m0 p0 is-centered">
-        <div v-for="movie in movies" :key="movie" class="column is-4">
-          <MovieCard :movie="movie" />
-        </div>
+<div style="background-color:#f5f7fb;">
+  <HomeCarousel :slides="slides" :genres="genres" />
+  <div class="container py4">
+    <div class="columns is-multiline m0 p0 is-centered">
+      <div v-for="movie in movies" :key="movie" class="column is-4">
+        <MovieCard :movie="movie" :genres="genres" />
       </div>
     </div>
   </div>
+</div>
 </template>
 
 <script>
@@ -17,12 +17,27 @@ import MovieCard from '@/components/homeComponents/MovieCard'
 
 export default {
   name: 'Home',
-  components: {HomeCarousel, MovieCard},
-  data () {
+  components: {
+    HomeCarousel,
+    MovieCard
+  },
+  data() {
     return {
-      slides: slides,
-      movies: movies
+      slides: null,
+      movies: null,
+      genres: null
     }
+  },
+  mounted() {
+    this.axios.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=bb6f51bef07465653c3e553d6ab161a8`).then((response) => {
+      this.movies = response.data.results
+    })
+    this.axios.get(`https://api.themoviedb.org/3/genre/movie/list?api_key=bb6f51bef07465653c3e553d6ab161a8`).then((response) => {
+      this.genres = response.data.genres
+    })
+    this.axios.get(`https://api.themoviedb.org/3/trending/movie/week?api_key=bb6f51bef07465653c3e553d6ab161a8`).then((response) => {
+      this.slides = response.data.results
+    })
   }
 }
 </script>

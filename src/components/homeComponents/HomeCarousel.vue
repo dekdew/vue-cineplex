@@ -2,16 +2,16 @@
 <carousel :autoplay="true" :loop="true" :perPage="1" :paginationEnabled="false" :autoplayTimeout="5000"
   :autoplayHoverPause="false">
   <slide v-for="slide in slides" :key="slide">
-    <div class="main has-text-white" :style="{ 'background-image': 'url(' + slide.url + ')' }">
+    <div class="main has-text-white" :style="{ 'background-image': 'url(https://image.tmdb.org/t/p/w1280' + slide.backdrop_path + ')' }">
       <div class="container">
         <div class="inner">
           <h1 class="h1">{{ slide.title }}</h1>
-          <p>{{ slide.time }} | {{slide.genre}} | {{slide.releaseDate}}</p>
+          <p>In Theaters {{slide.release_date}}</p>
           <a class="button my1 is-info">
             <strong>GET TICKETS</strong>
             <img src="../../assets/ticket.svg" width="40px">
           </a>
-          <p class="more">
+          <p class="more underline">
             <a>View Details</a>
           </p>
         </div>
@@ -24,7 +24,7 @@
 <script>
 export default {
   name: 'HomeCarousel',
-  props: ['slides'],
+  props: ['slides', 'genres'],
   data () {
     return {
     }
@@ -83,6 +83,6 @@ a {
 }
 .more a:hover {
   color: #fff;
-  text-shadow: 0px 0px 9px #fff;
+  text-shadow: 0px 0px 5px #fff5;
 }
 </style>
