@@ -5,14 +5,14 @@
         <img src="../assets/logo.png" height="28">
       </router-link>
 
-      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasic">
+      <a role="button" @click="showNav = !showNav" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasic">
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
       </a>
     </div>
 
-    <div id="navbarBasic" class="navbar-menu">
+    <div id="navbarBasic" class="navbar-menu" :class="{ 'is-active': showNav }">
       <div class="navbar-end">
         <div class="navbar-item">
           <div class="buttons">
@@ -33,30 +33,11 @@
   export default {
     name: 'Navbar',
     data() {
-      return {}
+      return {
+        showNav: false
+      }
     }
   }
-
-  /* burger navigation */
-  document.addEventListener('DOMContentLoaded', function () {
-    // Get all "navbar-burger" elements
-    var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0)
-    // Check if there are any navbar burgers
-    if ($navbarBurgers.length > 0) {
-      // Add a click event on each of them
-      $navbarBurgers.forEach(function ($el) {
-        $el.addEventListener('click', function () {
-          // Get the target from the "data-target" attribute
-          var target = $el.dataset.target
-          var $target = document.getElementById(target)
-          // Toggle the class on both the "navbar-burger" and the "navbar-menu"
-          $el.classList.toggle('is-active')
-          $target.classList.toggle('is-active')
-        })
-      })
-    }
-  })
-
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

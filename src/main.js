@@ -7,8 +7,12 @@ import Buefy from 'buefy'
 import 'buefy/dist/buefy.css'
 import basscss from 'basscss/src/basscss.css'
 import VueCarousel from 'vue-carousel';
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+ 
+Vue.use(VueAxios, axios)
 
-Vue.use(VueCarousel);
+Vue.use(VueCarousel)
 
 Vue.use(Buefy, {
   defaultIconPack: 'fa'
