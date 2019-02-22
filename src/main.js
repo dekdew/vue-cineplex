@@ -9,6 +9,9 @@ import basscss from 'basscss/src/basscss.css'
 import VueCarousel from 'vue-carousel';
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+import VueYoutube from 'vue-youtube'
+ 
+Vue.use(VueYoutube)
  
 Vue.use(VueAxios, axios)
 
