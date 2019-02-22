@@ -1,7 +1,7 @@
 <template>
   <div style="background-color:#f5f7fb;">
     <MovieHero :data="data" :images="images" />
-    <MovieInfo :data="data" :images="images" :videos="videos" />
+    <MovieInfo :data="data" :images="images" :videos="videos" :credits="credits" />
   </div>
 </template>
 
@@ -20,7 +20,8 @@ export default {
     return {
       data: null,
       videos: null,
-      images: null
+      images: null,
+      credits: null
     }
   },
   mounted() {
@@ -32,6 +33,9 @@ export default {
     })
     this.axios.get(`https://api.themoviedb.org/3/movie/` + this.id + `/images?api_key=bb6f51bef07465653c3e553d6ab161a8`).then((response) => {
       this.images = response.data
+    })
+    this.axios.get(`https://api.themoviedb.org/3/movie/` + this.id + `/credits?api_key=bb6f51bef07465653c3e553d6ab161a8`).then((response) => {
+      this.credits = response.data
     })
   }
 }
