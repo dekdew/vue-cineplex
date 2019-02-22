@@ -6,7 +6,7 @@
       <div class="container">
         <div class="inner">
           <h1 class="h1">{{ slide.title }}</h1>
-          <p>In Theaters {{slide.release_date}}</p>
+          <p>In Theaters {{ new Date(slide.release_date).toLocaleDateString('en-TH', { year: 'numeric', month: 'long', day: 'numeric' }) }}</p>
           <a class="button my1 is-info">
             <strong>GET TICKETS</strong>
             <img src="../../assets/ticket.svg" width="40px">
