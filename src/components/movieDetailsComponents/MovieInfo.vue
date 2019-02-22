@@ -1,7 +1,7 @@
 <template>
   <div class="container p3">
     <div class="columns">
-      <div class="column is-half p3">
+      <div class="column is-two-fifths p2">
         <div class="image is-2by3">
           <img :src="'https://image.tmdb.org/t/p/w500' + images.posters[1].file_path">
           <div class="release-date has-background-info">
@@ -13,7 +13,7 @@
           <div @click="isVideoModalActive = true" class="btn-play has-background-info"><i class="fas fa-play fa-inverse" /></div>
         </div>
       </div>
-      <div class="movie-info column is-half py4">
+      <div class="movie-info column is-three-fifths p3">
         <div class="header-section">
           <p class="is-size-2">{{ data.title }}</p>
           <p>Release Date: {{ new Date(data.release_date).toLocaleDateString('en-TH', { year: 'numeric', month: 'long',
@@ -21,12 +21,12 @@
           <p>Genre: {{ data.genres[0].name }} | <i class="fas fa-clock" /> {{ data.runtime }} Mins</p>
         </div>
 
-        <div class="overview pt3">
+        <div class="overview pt2">
           <p class="h2">Overview</p>
           <p>{{ data.overview }}</p>
         </div>
 
-        <p class="h2 pt3">Actors</p>
+        <p class="h2 pt2">Actors</p>
         <div class="actors">
           <div class="actor inline-block card mx1" v-for="cast in credits.cast" :key="cast">
             <div class="card-image">
@@ -38,8 +38,8 @@
             <div class="card-content">
               <div class="media">
                 <div class="media-content">
-                  <p class="title h3">{{ cast.name }}</p>
-                  <p class="subtitle h4 overflow-auto">{{ cast.character }}</p>
+                  <p class="title h4">{{ cast.name }}</p>
+                  <p class="subtitle h5 overflow-auto">{{ cast.character }}</p>
                 </div>
               </div>
             </div>
@@ -105,7 +105,12 @@ export default {
   -ms-overflow-style: -ms-autohiding-scrollbar;
 }
 .actor {
-  width: 200px;
+  width: 170px;
   overflow: hidden;
+}
+.actor img {
+  width: 170px;
+  height: 170px;
+  object-fit: cover;
 }
 </style>
