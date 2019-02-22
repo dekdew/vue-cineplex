@@ -24,10 +24,13 @@ export default {
   props: ['data', 'images'],
   data() {
     return {
+      playerVars: {
+        autoplay: 1,
+        controls: 0,
+        loop: 1,
+        mute: 1
+      }
     }
-  },
-  mounted() {
-    console.log(this.data.genres)
   }
 }
 </script>
@@ -78,12 +81,5 @@ export default {
 .inner img {
   position: absolute;
   right: 20px;
-}
-a {
-  color: #fff;
-}
-.more a:hover {
-  color: #fff;
-  text-shadow: 0px 0px 5px #fff5;
 }
 </style>
