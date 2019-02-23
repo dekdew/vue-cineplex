@@ -63,7 +63,7 @@ export default {
   z-index: 2;
   position: absolute;
   left: 50%;
-  bottom: 7em;
+  bottom: 5em;
 }
 .inner {
   position: relative;

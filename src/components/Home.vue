@@ -2,19 +2,20 @@
   <div style="background-color:#f5f7fb;">
     <Loading v-if="isLoad" />
     <HomeCarousel :slides="slides" :genres="genres" />
+    <Search v-model="search" />
     <div class="container py4">
       <p class="is-size-4 bold has-text-info has-text-centered pb2">Movies</p>
       <b-tabs position="is-centered" class="block">
         <b-tab-item label="Now Showing">
           <div class="columns is-multiline m0 p0 is-centered">
-            <div v-for="movie in movies" :key="movie" class="column is-4">
+            <div v-for="movie in filteredMovie" :key="movie" class="column is-4">
               <MovieCard :movie="movie" :genres="genres" />
             </div>
           </div>
         </b-tab-item>
         <b-tab-item label="Coming Soon">
           <div class="columns is-multiline m0 p0 is-centered">
-            <div v-for="movie in upcoming" :key="movie" class="column is-4">
+            <div v-for="movie in filteredMovieComing" :key="movie" class="column is-4">
               <MovieCard :movie="movie" :genres="genres" />
             </div>
           </div>
@@ -27,6 +28,7 @@
 <script>
 import debounce from 'lodash/debounce'
 import Loading from '@/components/Loading'
+import Search from '@/components/homeComponents/Search'
 import HomeCarousel from '@/components/homeComponents/HomeCarousel'
 import MovieCard from '@/components/homeComponents/MovieCard'
 
@@ -34,6 +36,7 @@ export default {
   name: 'Home',
   components: {
     Loading,
+    Search,
     HomeCarousel,
     MovieCard
   },
@@ -43,7 +46,8 @@ export default {
       slides: null,
       movies: null,
       upcoming: null,
-      genres: null
+      genres: null,
+      search: ''
     }
   },
   mounted() {
@@ -64,7 +68,19 @@ export default {
     this.$nextTick(() => {
     this.isLoad = false
     })
-  }, 1000)
+  }, 1000),
+  computed: {
+    filteredMovie() {
+      return this.movies.filter(movie => {
+        return movie.title.toLowerCase().includes(this.search.toLowerCase())
+      })
+    },
+    filteredMovieComing() {
+      return this.upcoming.filter(movie => {
+        return movie.title.toLowerCase().includes(this.search.toLowerCase())
+      })
+    }
+  }
 }
 </script>
 
