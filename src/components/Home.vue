@@ -3,6 +3,7 @@
     <Loading v-if="isLoad" />
     <HomeCarousel :slides="slides" :genres="genres" />
     <div class="container py4">
+      <p class="is-size-4 bold has-text-info has-text-centered pb2">Movies</p>
       <b-tabs position="is-centered" class="block">
         <b-tab-item label="Now Showing">
           <div class="columns is-multiline m0 p0 is-centered">
@@ -55,7 +56,7 @@ export default {
     this.axios.get(`https://api.themoviedb.org/3/genre/movie/list?api_key=bb6f51bef07465653c3e553d6ab161a8`).then((response) => {
       this.genres = response.data.genres
     })
-    this.axios.get(`https://api.themoviedb.org/3/trending/movie/week?api_key=bb6f51bef07465653c3e553d6ab161a8&language=en-US&region=US`).then((response) => {
+    this.axios.get(`https://api.themoviedb.org/3/trending/movie/day?api_key=bb6f51bef07465653c3e553d6ab161a8&language=en-US&region=US`).then((response) => {
       this.slides = response.data.results
     })
   },
@@ -63,7 +64,7 @@ export default {
     this.$nextTick(() => {
     this.isLoad = false
     })
-  }, 250)
+  }, 1000)
 }
 </script>
 

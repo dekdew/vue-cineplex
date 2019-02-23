@@ -2,7 +2,8 @@
 <carousel :autoplay="true" :loop="true" :perPage="1" :paginationEnabled="false" :autoplayTimeout="5000"
   :autoplayHoverPause="false">
   <slide v-for="slide in slides" :key="slide">
-    <div class="main has-text-white" :style="{ 'background-image': 'url(https://image.tmdb.org/t/p/w1280' + slide.backdrop_path + ')' }">
+    <div class="main has-text-white has-background-black">
+    <progressive-background :src="'https://image.tmdb.org/t/p/w1280' + slide.backdrop_path" :placeholder="'https://image.tmdb.org/t/p/w200' + slide.backdrop_path" />
       <div class="container">
         <div class="inner">
           <h1 class="h1">{{ slide.title }}</h1>
