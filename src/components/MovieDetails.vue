@@ -67,7 +67,7 @@ export default {
     this.$nextTick(() => {
       this.isLoad = false // runs only once
     })
-  }, 1000)
+  }, 1500)
 }
 </script>
 

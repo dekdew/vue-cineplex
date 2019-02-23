@@ -68,7 +68,7 @@ export default {
     this.$nextTick(() => {
     this.isLoad = false
     })
-  }, 1000),
+  }, 1500),
   computed: {
     filteredMovie() {
       return this.movies.filter(movie => {
