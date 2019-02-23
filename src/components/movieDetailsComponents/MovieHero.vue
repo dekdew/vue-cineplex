@@ -54,8 +54,8 @@ export default {
   left: 0;
   pointer-events: none;
   background-image: linear-gradient(to bottom,
-    rgba(255, 255, 255, 0),
-    rgba(0, 0, 0, 1) 80%);
+    #fff0,
+    #000 90%);
   width: 100%;
   height: 25em;
 }
