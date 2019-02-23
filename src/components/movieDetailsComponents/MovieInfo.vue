@@ -3,7 +3,7 @@
     <div class="columns">
       <div class="column is-two-fifths p2">
         <div class="image">
-          <progressive-background class="img" :src="'https://image.tmdb.org/t/p/w500' + images.posters[1].file_path" :placeholder="'https://image.tmdb.org/t/p/w200' + images.posters[1].file_path" />
+          <progressive-background class="img" :src="'https://image.tmdb.org/t/p/w500' + images.posters[1].file_path" :placeholder="'https://image.tmdb.org/t/p/w45' + images.posters[1].file_path" />
           <div class="release-date has-background-info">
             <p class="has-text-white h1">{{ new Date(data.release_date).getDate() }}</p>
             <div class="divider"></div>
@@ -31,7 +31,7 @@
           <div class="actor inline-block card mx1" v-for="cast in credits.cast" :key="cast">
             <div class="card-image">
               <figure>
-                <progressive-background class="img" :src="'https://image.tmdb.org/t/p/w200' + cast.profile_path" :alt="cast.name" :placeholder="'https://image.tmdb.org/t/p/w200' + cast.profile_path" :fallback="'https://image.tmdb.org/t/p/w200' + images.posters[0].file_path" />
+                <progressive-background class="img" :src="'https://image.tmdb.org/t/p/w200' + cast.profile_path" :alt="cast.name" :placeholder="'https://image.tmdb.org/t/p/w45' + cast.profile_path" :fallback="'https://image.tmdb.org/t/p/w200' + images.posters[0].file_path" />
               </figure>
             </div>
             <div class="card-content">

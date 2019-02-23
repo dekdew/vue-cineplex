@@ -1,6 +1,6 @@
 <template>
   <div class="main has-text-white">
-    <progressive-background :src="'https://image.tmdb.org/t/p/w1280' + images.backdrops[1].file_path" :placeholder="'https://image.tmdb.org/t/p/w200' + images.backdrops[1].file_path" />
+    <progressive-background :src="'https://image.tmdb.org/t/p/w1280' + images.backdrops[1].file_path" :placeholder="'https://image.tmdb.org/t/p/w45' + images.backdrops[1].file_path" />
     <div class="container">
       <div class="inner">
         <h1 class="h1">{{ data.title }}</h1>

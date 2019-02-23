@@ -1,7 +1,7 @@
 <template>
   <router-link :to="`/movie/` + movie.id">
     <div class="card">
-      <div class="poster"><progressive-background class="img" :src="'https://image.tmdb.org/t/p/w500' + movie.poster_path" :placeholder="'https://image.tmdb.org/t/p/w200' + movie.poster_path" /></div>
+      <div class="poster"><progressive-background class="img" :src="'https://image.tmdb.org/t/p/w500' + movie.poster_path" :placeholder="'https://image.tmdb.org/t/p/w45' + movie.poster_path" /></div>
       <div class="details">
         <p class="has-text-white h3">{{ movie.original_title }}<br><span class="has-text-warning p0 m0 h4">Release
             date: {{ new Date(movie.release_date).toLocaleDateString('en-TH') }}</span></p>
