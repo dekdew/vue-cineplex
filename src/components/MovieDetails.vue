@@ -1,12 +1,15 @@
 <template>
   <div style="background-color:#f5f7fb;">
-    <Loading v-if="isLoad"/>
+    <Loading v-if="isLoad" />
     <MovieHero :data="data" :images="images" />
     <MovieInfo :data="data" :images="images" :videos="videos" :credits="credits" />
-    <div class="container py4">
-      <div class="columns is-multiline m0 p0 is-centered">
-        <div v-for="movie in 3" :key="movie" class="column is-4">
-          <MovieCard :movie="recommendations[movie]" :genres="genres" />
+    <div class="has-background-white">
+      <p class="is-size-4 bold has-text-info has-text-centered pt4 pb0">Similar Movies</p>
+      <div class="container pt2 pb4">
+        <div class="columns is-multiline m0 p0 is-centered">
+          <div v-for="movie in 3" :key="movie" class="column is-4">
+            <MovieCard :movie="recommendations[movie]" :genres="genres" />
+          </div>
         </div>
       </div>
     </div>

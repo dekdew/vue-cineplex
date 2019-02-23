@@ -1,5 +1,5 @@
 <template>
-  <div class="main has-text-white">
+  <div class="main has-text-white has-background-black">
     <progressive-background :src="'https://image.tmdb.org/t/p/w1280' + images.backdrops[1].file_path" :placeholder="'https://image.tmdb.org/t/p/w45' + images.backdrops[1].file_path" />
     <div class="container">
       <div class="inner">

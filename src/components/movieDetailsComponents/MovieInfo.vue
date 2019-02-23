@@ -1,5 +1,5 @@
 <template>
-  <div class="container py4">
+  <div class="container p4">
     <div class="columns">
       <div class="column is-two-fifths p2">
         <div class="image">
