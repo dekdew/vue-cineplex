@@ -2,7 +2,7 @@
   <div class="main has-text-white" :style="{ 'background-image': 'url(https://image.tmdb.org/t/p/w1280' + images.backdrops[1].file_path + ')' }">
     <div class="container">
       <div class="inner">
-        <h1 class="h1">{{ data.title }} ({{ new Date(data.release_date).getFullYear() }})</h1>
+        <h1 class="h1">{{ data.title }}</h1>
         <p><i class="fas fa-clock fa-inverse" /> {{ data.runtime }} Mins</p>
         <div class="tags are-medium">
           <span class="tag is-dark" v-for="genre in data.genres" :key="genre">
@@ -24,10 +24,13 @@ export default {
   props: ['data', 'images'],
   data() {
     return {
+      playerVars: {
+        autoplay: 1,
+        controls: 0,
+        loop: 1,
+        mute: 1
+      }
     }
-  },
-  mounted() {
-    console.log(this.data.genres)
   }
 }
 </script>
@@ -78,12 +81,5 @@ export default {
 .inner img {
   position: absolute;
   right: 20px;
-}
-a {
-  color: #fff;
-}
-.more a:hover {
-  color: #fff;
-  text-shadow: 0px 0px 5px #fff5;
 }
 </style>
