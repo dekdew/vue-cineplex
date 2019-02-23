@@ -1,5 +1,6 @@
 <template>
   <div style="background-color:#f5f7fb;">
+    <Loading v-if="isLoad"/>
     <MovieHero :data="data" :images="images" />
     <MovieInfo :data="data" :images="images" :videos="videos" :credits="credits" />
     <div class="container py4">
@@ -13,6 +14,8 @@
 </template>
 
 <script>
+import debounce from 'lodash/debounce'
+import Loading from '@/components/Loading'
 import MovieHero from '@/components/movieDetailsComponents/MovieHero'
 import MovieInfo from '@/components/movieDetailsComponents/MovieInfo'
 import MovieCard from '@/components/homeComponents/MovieCard'
@@ -21,12 +24,14 @@ export default {
   name: 'MovieDetails',
   props: ['id'],
   components: {
+    Loading,
     MovieHero,
     MovieInfo,
     MovieCard
   },
   data() {
     return {
+      isLoad: true,
       data: null,
       videos: null,
       images: null,
@@ -54,7 +59,12 @@ export default {
     this.axios.get(`https://api.themoviedb.org/3/genre/movie/list?api_key=bb6f51bef07465653c3e553d6ab161a8`).then((response) => {
       this.genres = response.data.genres
     })
-  }
+  },
+  updated: debounce(function () {
+    this.$nextTick(() => {
+      this.isLoad = false // runs only once
+    })
+  }, 250)
 }
 </script>
 

@@ -1,5 +1,6 @@
 <template>
 <div style="background-color:#f5f7fb;">
+  <Loading v-if="isLoad"/>
   <HomeCarousel :slides="slides" :genres="genres" />
   <div class="container py4">
     <div class="columns is-multiline m0 p0 is-centered">
@@ -12,17 +13,21 @@
 </template>
 
 <script>
+import debounce from 'lodash/debounce'
+import Loading from '@/components/Loading'
 import HomeCarousel from '@/components/homeComponents/HomeCarousel'
 import MovieCard from '@/components/homeComponents/MovieCard'
 
 export default {
   name: 'Home',
   components: {
+    Loading,
     HomeCarousel,
     MovieCard
   },
   data() {
     return {
+      isLoad: true,
       slides: null,
       movies: null,
       genres: null
@@ -38,10 +43,16 @@ export default {
     this.axios.get(`https://api.themoviedb.org/3/trending/movie/week?api_key=bb6f51bef07465653c3e553d6ab161a8`).then((response) => {
       this.slides = response.data.results
     })
-  }
+  },
+  updated: debounce(function () {
+    this.$nextTick(() => {
+    this.isLoad = false
+    })
+  }, 250)
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
 </style>
