@@ -58,6 +58,5 @@ export default {
 	position: relative;
 	margin-top: -2.5em;
 	box-shadow: 0 0 20px #0003;
-	min-width: 60vw;
 }
 </style>
