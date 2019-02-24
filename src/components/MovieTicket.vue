@@ -2,6 +2,7 @@
   <div>
     <Loading v-if="isLoad" />
     <BookingNav :movies="movies" />
+    <BookingStep />
   </div>
 </template>
 
@@ -9,12 +10,14 @@
 import debounce from 'lodash/debounce'
 import Loading from '@/components/Loading'
 import BookingNav from '@/components/MovieTicketComponents/BookingNav'
+import BookingStep from '@/components/MovieTicketComponents/BookingStep'
 
 export default {
   name: 'MovieTicket',
   props: ['id'],
   components: {
-    BookingNav
+    BookingNav,
+    BookingStep
   },
   data() {
     return {
