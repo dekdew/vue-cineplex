@@ -7,7 +7,7 @@
       <p class="is-size-4 bold has-text-info has-text-centered pb2">Movies</p>
       <b-tabs position="is-centered" class="block">
         <div class="main-content columns">
-          <div class="container column is-10">
+          <div class="movies container column is-10">
             <b-tab-item label="Now Showing">
               <div class="columns is-multiline m0 p0 is-centered">
                 <div v-for="movie in filteredMovie" :key="movie.id" class="column is-4">
@@ -93,5 +93,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+.movies {
+  overflow: hidden;
+}
 </style>
