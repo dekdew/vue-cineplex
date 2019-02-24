@@ -31,6 +31,7 @@ import Loading from '@/components/Loading'
 import Search from '@/components/homeComponents/Search'
 import HomeCarousel from '@/components/homeComponents/HomeCarousel'
 import MovieCard from '@/components/homeComponents/MovieCard'
+import Panel from '@/components/homeComponents/Panel'
 
 export default {
   name: 'Home',
@@ -38,7 +39,8 @@ export default {
     Loading,
     Search,
     HomeCarousel,
-    MovieCard
+    MovieCard,
+    Panel
   },
   data() {
     return {
