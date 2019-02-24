@@ -2,24 +2,29 @@
   <div style="background-color:#f5f7fb;">
     <Loading v-if="isLoad" />
     <HomeCarousel :slides="slides" :genres="genres" />
-    <Search v-model="search" />
+    <Showtime :movies="movies" />
     <div class="container py4">
       <p class="is-size-4 bold has-text-info has-text-centered pb2">Movies</p>
       <b-tabs position="is-centered" class="block">
-        <b-tab-item label="Now Showing">
-          <div class="columns is-multiline m0 p0 is-centered">
-            <div v-for="movie in filteredMovie" :key="movie" class="column is-4">
-              <MovieCard :movie="movie" :genres="genres" />
-            </div>
+        <div class="main-content columns">
+          <div class="container column is-10">
+            <b-tab-item label="Now Showing">
+              <div class="columns is-multiline m0 p0 is-centered">
+                <div v-for="movie in filteredMovie" :key="movie.id" class="column is-4">
+                  <MovieCard :movie="movie" :genres="genres" />
+                </div>
+              </div>
+            </b-tab-item>
+            <b-tab-item label="Coming Soon">
+              <div class="columns is-multiline m0 p0 is-centered">
+                <div v-for="movie in filteredMovieComing" :key="movie.id" class="column is-4">
+                  <MovieCard :movie="movie" :genres="genres" />
+                </div>
+              </div>
+            </b-tab-item>
           </div>
-        </b-tab-item>
-        <b-tab-item label="Coming Soon">
-          <div class="columns is-multiline m0 p0 is-centered">
-            <div v-for="movie in filteredMovieComing" :key="movie" class="column is-4">
-              <MovieCard :movie="movie" :genres="genres" />
-            </div>
-          </div>
-        </b-tab-item>
+          <Panel v-model="search" :genres="genres" />
+        </div>
       </b-tabs>
     </div>
   </div>
@@ -28,7 +33,7 @@
 <script>
 import debounce from 'lodash/debounce'
 import Loading from '@/components/Loading'
-import Search from '@/components/homeComponents/Search'
+import Showtime from '@/components/homeComponents/Showtime'
 import HomeCarousel from '@/components/homeComponents/HomeCarousel'
 import MovieCard from '@/components/homeComponents/MovieCard'
 import Panel from '@/components/homeComponents/Panel'
@@ -37,7 +42,7 @@ export default {
   name: 'Home',
   components: {
     Loading,
-    Search,
+    Showtime,
     HomeCarousel,
     MovieCard,
     Panel

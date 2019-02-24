@@ -1,7 +1,7 @@
 <template>
 <carousel :autoplay="true" :loop="true" :perPage="1" :paginationEnabled="false" :autoplayTimeout="5000"
   :autoplayHoverPause="false">
-  <slide v-for="slide in slides" :key="slide">
+  <slide v-for="slide in slides" :key="slide.id">
     <div class="main has-text-white has-background-black">
     <progressive-background :src="'https://image.tmdb.org/t/p/w1280' + slide.backdrop_path" :placeholder="'https://image.tmdb.org/t/p/w200' + slide.backdrop_path" />
       <div class="container">

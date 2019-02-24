@@ -28,7 +28,7 @@
 
         <p class="h2 pt2">Actors</p>
         <div class="actors">
-          <div class="actor inline-block card mx1" v-for="cast in credits.cast" :key="cast">
+          <div class="actor inline-block card mx1" v-for="cast in credits.cast" :key="cast.id">
             <div class="card-image">
               <figure>
                 <progressive-background class="img" :src="'https://image.tmdb.org/t/p/w200' + cast.profile_path" :alt="cast.name" :placeholder="'https://image.tmdb.org/t/p/w45' + cast.profile_path" :fallback="'https://image.tmdb.org/t/p/w200' + images.posters[0].file_path" />

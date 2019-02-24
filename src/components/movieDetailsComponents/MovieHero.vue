@@ -6,7 +6,7 @@
         <h1 class="h1">{{ data.title }}</h1>
         <p><i class="fas fa-clock fa-inverse" /> {{ data.runtime }} Mins</p>
         <div class="tags are-medium">
-          <span class="tag is-dark" v-for="genre in data.genres" :key="genre">
+          <span class="tag is-dark" v-for="genre in data.genres" :key="genre.id">
             {{ genre.name }}
           </span>
         </div>
