@@ -29,7 +29,7 @@
       <MovieMiniInfo :movie="movie" />
 			<!-- step 1 -->
       <div class="step-content has-text-centered is-active">
-        b
+        <Step1 />
       </div>
 
 			<!-- step 2 -->
@@ -63,12 +63,14 @@
 import bulmaSteeps from 'bulma-steps/dist/js/bulma-steps.min.js'
 import 'bulma-steps/dist/css/bulma-steps.min.css';
 import MovieMiniInfo from '@/components/movieTicketComponents/MovieMiniInfo'
+import Step1 from '@/components/movieTicketComponents/Step1'
 
 export default {
 	name: 'BookingStep',
   props: ['movie'],
   components: {
-    MovieMiniInfo
+    MovieMiniInfo,
+    Step1
   },
   data() {
     return {

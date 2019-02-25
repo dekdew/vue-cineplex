@@ -10,10 +10,10 @@
             {{ genre.name }}
           </span>
         </div>
-        <a class="button is-info">
+        <router-link :to="`/booking/` + data.id" class="button my1 is-info">
           <strong>GET TICKETS</strong>
           <img src="../../assets/ticket.svg" width="40px">
-        </a>
+        </router-link>
       </div>
     </div>
   </div>
