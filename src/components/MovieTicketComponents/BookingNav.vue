@@ -5,26 +5,8 @@
         <div class="column">
           <b-field>
             <b-select placeholder="Select theater" icon="building" expanded>
-              <optgroup label="Black Sails">
-                <option value="flint">Flint</option>
-                <option value="silver">Silver</option>
-                <option value="vane">Vane</option>
-                <option value="billy">Billy</option>
-                <option value="jack">Jack</option>
-              </optgroup>
-
-              <optgroup label="Breaking Bad">
-                <option value="heisenberg">Heisenberg</option>
-                <option value="jesse">Jesse</option>
-                <option value="saul">Saul</option>
-                <option value="mike">Mike</option>
-              </optgroup>
-
-              <optgroup label="Game of Thrones">
-                <option value="tyrion-lannister">Tyrion Lannister</option>
-                <option value="jamie-lannister">Jamie Lannister</option>
-                <option value="daenerys-targaryen">Daenerys Targaryen</option>
-                <option value="jon-snow">Jon Snow</option>
+              <optgroup v-for="cinema_region in cinemas" :key="cinema_region.region_id" :label="cinema_region.name">
+                <option v-for="cinema in cinema_region.locations" :key="cinema.location_id" :value="cinema.location_id">{{ cinema.name }}</option>
               </optgroup>
             </b-select>
           </b-field>
@@ -32,8 +14,8 @@
         <div class="column">
           <b-field>
             <b-select placeholder="Select movie" icon="film" expanded>
-              <option v-for="option in movies" :value="option.id" :key="option.id">
-                {{ option.title }}
+              <option v-for="movie in movies" :value="movie.id" :key="movie.id">
+                {{ movie.title }}
               </option>
             </b-select>
           </b-field>
@@ -49,10 +31,10 @@
 <script>
 export default {
   name: 'BookingNav',
-  props: ['movies'],
+  props: ['movies', 'cinemas'],
   data() {
     return {
-      isLoad: true,
+      isLoad: true
     }
   }  
 }

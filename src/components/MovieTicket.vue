@@ -1,7 +1,7 @@
 <template>
   <div>
     <Loading v-if="isLoad" />
-    <BookingNav :movies="movies" />
+    <BookingNav :movies="movies" :cinemas="cinemas" />
     <BookingStep :movie="data" />
   </div>
 </template>
@@ -11,6 +11,7 @@ import debounce from 'lodash/debounce'
 import Loading from '@/components/Loading'
 import BookingNav from '@/components/movieTicketComponents/BookingNav'
 import BookingStep from '@/components/movieTicketComponents/BookingStep'
+import api from '../api/cinemas.json'
 
 export default {
   name: 'MovieTicket',
@@ -25,6 +26,7 @@ export default {
       isLoad: true,
       movies: null,
       data: null,
+      cinemas: api
     }
   },
   mounted() {
