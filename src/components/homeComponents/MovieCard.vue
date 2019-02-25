@@ -1,5 +1,5 @@
 <template>
-  <router-link :to="`/movie/` + movie.id">
+  <router-link :to="`/booking/` + movie.id">
     <div class="card">
       <div class="poster"><progressive-background class="img" :src="'https://image.tmdb.org/t/p/w500' + movie.poster_path" :placeholder="'https://image.tmdb.org/t/p/w45' + movie.poster_path" /></div>
       <div class="details">

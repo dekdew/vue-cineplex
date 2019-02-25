@@ -2,20 +2,21 @@
   <div>
     <Loading v-if="isLoad" />
     <BookingNav :movies="movies" />
-    <BookingStep />
+    <BookingStep :movie="data" />
   </div>
 </template>
 
 <script>
 import debounce from 'lodash/debounce'
 import Loading from '@/components/Loading'
-import BookingNav from '@/components/MovieTicketComponents/BookingNav'
-import BookingStep from '@/components/MovieTicketComponents/BookingStep'
+import BookingNav from '@/components/movieTicketComponents/BookingNav'
+import BookingStep from '@/components/movieTicketComponents/BookingStep'
 
 export default {
   name: 'MovieTicket',
   props: ['id'],
   components: {
+    Loading,
     BookingNav,
     BookingStep
   },
@@ -23,16 +24,20 @@ export default {
     return {
       isLoad: true,
       movies: null,
+      data: null,
     }
   },
   mounted() {
     this.axios.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=bb6f51bef07465653c3e553d6ab161a8&language=en-US&region=US`).then((response) => {
       this.movies = response.data.results
     })
+    this.axios.get(`https://api.themoviedb.org/3/movie/` + this.id + `?api_key=bb6f51bef07465653c3e553d6ab161a8&language=en-US`).then((response) => {
+      this.data = response.data
+    })
   },
   updated: debounce(function () {
     this.$nextTick(() => {
-      this.isLoad = false // runs only once
+      this.isLoad = false
     })
   }, 1500)
 }
