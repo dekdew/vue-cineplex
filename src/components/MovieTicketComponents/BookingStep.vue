@@ -78,6 +78,10 @@ export default {
       booking: {
         date: null,
         time: null,
+        cinema: {
+          theater: null,
+          name: null,
+        },
         seats: []
       }
 		}

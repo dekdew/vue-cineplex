@@ -1,5 +1,5 @@
 <template>
-  <b-tabs class="pt1 is-hidden-mobile" expanded>
+  <b-tabs class="pt3 is-hidden-mobile" expanded>
     <b-tab-item v-for="day in week" :key="day.getDate()" :label="day.toDateString()">
       <!-- region -->
       <b-collapse v-for="region in cinemas" :key="region.id" class="card my2">
@@ -35,7 +35,7 @@
                       </a>
                     </p>
                     <p class="control steps-action">
-                      <a data-nav="next" class="button is-info px3" @click="updateBooking({date:day.toDateString(), time:'13:30'})">
+                      <a data-nav="next" class="button is-info px3" @click="updateBooking({date:day.toDateString(), time:'13:30', cinema:{theater:theater.theater, name:cinema.name}})">
                         13:30
                       </a>
                     </p>
