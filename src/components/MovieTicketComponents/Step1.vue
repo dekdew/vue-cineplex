@@ -1,21 +1,31 @@
 <template>
   <b-tabs class="pt1 is-hidden-mobile" expanded>
     <b-tab-item v-for="day in week" :key="day.getDate()" :label="day.toDateString()">
+      <!-- region -->
       <b-collapse v-for="region in cinemas" :key="region.id" class="card my2">
-            <div slot="trigger" slot-scope="props" class="card-header has-background-info">
-                <p class="card-header-title has-text-white">
-                    {{ region.name }}
-                </p>
-                <a class="card-header-icon has-text-white">
-                    <b-icon
-                        :icon="props.open ? 'angle-down' : 'angle-up'">
-                    </b-icon>
-                </a>
-            </div>
+        <div slot="trigger" slot-scope="props" class="card-header" style="background-color: #2e66cf;">
+          <p class="card-header-title has-text-white">
+            <i class="fas fa-map-marker-alt" /> &nbsp; {{ region.name }}
+          </p>
+          <a class="card-header-icon has-text-white">
+            <b-icon :icon="props.open ? 'angle-down' : 'angle-up'">
+            </b-icon>
+          </a>
+        </div>
+        <div class="card-content p0">
+          <!-- cinema -->
+          <div v-for="cinema in region.locations" :key="cinema.id" class="card">
+            <header class="card-header bg-gray px2">
+              <p class="card-header-title has-text-info">
+                <i class="far fa-star" /> &nbsp; {{ cinema.name }}
+              </p>
+            </header>
             <div class="card-content">
-                a
+              <!-- theater -->
             </div>
-        </b-collapse>
+          </div>
+        </div>
+      </b-collapse>
     </b-tab-item>
   </b-tabs>
 </template>
@@ -42,4 +52,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.bg-gray {
+  background-color: #f5f7fb;
+}
+</style>
 
