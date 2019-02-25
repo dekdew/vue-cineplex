@@ -26,10 +26,10 @@
     </div>
 
     <div class="steps-content">
-      <MovieMiniInfo :movie="movie" />
+      <MovieMiniInfo :movie="movie" :booking="booking" />
 			<!-- step 1 -->
       <div class="step-content has-text-centered is-active">
-        <Step1 :cinemas="cinemas" />
+        <Step1 v-model="booking" :cinemas="cinemas" />
       </div>
 
 			<!-- step 2 -->

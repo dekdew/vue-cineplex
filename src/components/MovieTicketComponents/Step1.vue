@@ -35,7 +35,7 @@
                       </a>
                     </p>
                     <p class="control steps-action">
-                      <a data-nav="next" class="button is-info px3">
+                      <a data-nav="next" class="button is-info px3" @click="updateBooking({date:day.toDateString(), time:'13:30'})">
                         13:30
                       </a>
                     </p>
@@ -58,7 +58,7 @@
 <script>
 export default {
   name: 'Step1',
-  props: ['cinemas'],
+  props: ['booking', 'cinemas'],
   data() {
     return {
       week: [],
@@ -73,7 +73,14 @@ export default {
 			nextDay = new Date(day)
 			nextDay.setDate(day.getDate() + 1)
 			day = new Date(nextDay)
-		}
+    }
+    
+    console.log(this.booking)
+  },
+  methods: {
+    updateBooking: function (booking) {
+      this.$emit('input', booking)
+    }
   }
 }
 </script>

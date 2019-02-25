@@ -8,6 +8,7 @@
             :placeholder="'https://image.tmdb.org/t/p/w45' + movie.poster_path" />
           <div class="column">
             <p class="h3 bold">{{ movie.title }}</p>
+            <p class="has-text-info" v-show="booking.date != null">{{ booking.date }} &nbsp;|&nbsp; {{ booking.time }}</p>
             <p class="mt3">Genre: {{ movie.genres[0].name }}</p>
             <p><i class="fas fa-clock" /> {{ movie.runtime }} Mins</p>
             <router-link :to="`/movie/` + movie.id" class="button is-info is-outlined mt3">
@@ -20,18 +21,17 @@
 
     <div class="is-hidden-tablet">
       <progressive-background class="backdrop" :src="'https://image.tmdb.org/t/p/w500' + movie.backdrop_path"
-            :placeholder="'https://image.tmdb.org/t/p/w45' + movie.backdrop_path" />
+        :placeholder="'https://image.tmdb.org/t/p/w45' + movie.backdrop_path" />
       <div class="columns is-mobile info is-vcentered p0 m0">
-<progressive-img class="column img" :src="'https://image.tmdb.org/t/p/w200' + movie.poster_path"
-            :placeholder="'https://image.tmdb.org/t/p/w45' + movie.poster_path" />
-            <div class="column">
-            <p class="bold has-text-white">{{ movie.title }}</p>
-            <p class="has-text-white">Genre: {{ movie.genres[0].name }}</p>
-            <p class="has-text-white"><i class="fas fa-clock" /> {{ movie.runtime }} Mins</p>
-            <router-link :to="`/movie/` + movie.id" class="button is-white is-outlined is-small mt1">
-              View Details
-            </router-link>
-          </div>
+        <progressive-img class="column img" :src="'https://image.tmdb.org/t/p/w200' + movie.poster_path" :placeholder="'https://image.tmdb.org/t/p/w45' + movie.poster_path" />
+        <div class="column">
+          <p class="bold has-text-white">{{ movie.title }}</p>
+          <p class="has-text-white">Genre: {{ movie.genres[0].name }}</p>
+          <p class="has-text-white"><i class="fas fa-clock" /> {{ movie.runtime }} Mins</p>
+          <router-link :to="`/movie/` + movie.id" class="button is-white is-outlined is-small mt1">
+            View Details
+          </router-link>
+        </div>
       </div>
     </div>
   </main>
@@ -40,7 +40,7 @@
 <script>
 export default {
   name: 'MovieMiniInfo',
-  props: ['movie'],
+  props: ['movie', 'booking'],
   data () {
     return {
     }
