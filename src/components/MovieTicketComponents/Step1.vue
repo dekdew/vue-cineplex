@@ -1,14 +1,7 @@
 <template>
-  <nav class="level pt1 is-mobile">
-    <div v-for="day in week" :key="day.getDate()" class="level-item has-text-centered">
-      <div>
-        <a>
-          <p class="h3">{{ day.toDateString().slice(0, 3) }}</p>
-          <p>{{ day.toDateString().slice(4) }}</p>
-        </a>
-      </div>
-    </div>
-  </nav>
+  <b-tabs class="pt1 is-hidden-mobile" expanded>
+    <b-tab-item v-for="day in week" :key="day.getDate()" :label="day.toDateString()"></b-tab-item>
+  </b-tabs>
 </template>
 
 <script>
