@@ -22,6 +22,31 @@
             </header>
             <div class="card-content">
               <!-- theater -->
+              <div v-for="theater in cinema.theaters" :key="theater.id" class="columns card p2 is-vcentered">
+                <div class="column is-2">
+                  {{ theater.type }}
+                </div>
+                <div class="column is-10 showtime px3">
+                  <p><i class="fas fa-volume-up" /> ENG &nbsp; | &nbsp; Theater {{theater.theater}}</p>
+                  <div class="field is-grouped pt2">
+                    <p class="control">
+                      <a  class="button px3" disabled>
+                        11:10
+                      </a>
+                    </p>
+                    <p class="control steps-action">
+                      <a data-nav="next" class="button is-info px3">
+                        13:30
+                      </a>
+                    </p>
+                    <p class="control">
+                      <a class="button is-info is-outlined px3">
+                        18:50
+                      </a>
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -56,6 +81,10 @@ export default {
 <style scoped>
 .bg-gray {
   background-color: #f5f7fb;
+}
+.showtime {
+  text-align: left;
+  border-left:1px solid #0002;
 }
 </style>
 

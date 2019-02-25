@@ -74,7 +74,12 @@ export default {
   },
   data() {
     return {
-			steps: []
+      steps: [],
+      booking: {
+        date: null,
+        time: null,
+        seats: []
+      }
 		}
   },
   mounted: function () {
