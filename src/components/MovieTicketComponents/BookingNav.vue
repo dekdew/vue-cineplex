@@ -1,5 +1,5 @@
 <template>
-  <div class="has-background-info py2">
+  <div class="has-background-info py2 is-hidden-mobile">
     <div class="container px4">
       <div class="columns is-vcentered is-centered">
         <div class="column">

@@ -2,7 +2,7 @@
   <div>
     <Loading v-if="isLoad" />
     <BookingNav :movies="movies" :cinemas="cinemas" />
-    <BookingStep :movie="data" />
+    <BookingStep :movie="data" :cinemas="cinemas" />
   </div>
 </template>
 

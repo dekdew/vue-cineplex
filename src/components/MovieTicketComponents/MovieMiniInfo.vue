@@ -1,10 +1,10 @@
 <template>
   <main style="background-color:#f5f7fb;">
-    <div class="container py3">
+    <div class="container py3 is-hidden-mobile">
       <div class="box"></div>
       <div class="poster px4">
-        <div class="columns is-vcentered">
-          <progressive-img class="img column mx4" :src="'https://image.tmdb.org/t/p/w300' + movie.poster_path"
+        <div class="columns is-vcentered px4">
+          <progressive-img class="img column mx3" :src="'https://image.tmdb.org/t/p/w300' + movie.poster_path"
             :placeholder="'https://image.tmdb.org/t/p/w45' + movie.poster_path" />
           <div class="column">
             <p class="h3 bold">{{ movie.title }}</p>
@@ -15,6 +15,23 @@
             </router-link>
           </div>
         </div>
+      </div>
+    </div>
+
+    <div class="is-hidden-tablet">
+      <progressive-background class="backdrop" :src="'https://image.tmdb.org/t/p/w500' + movie.backdrop_path"
+            :placeholder="'https://image.tmdb.org/t/p/w45' + movie.backdrop_path" />
+      <div class="columns is-mobile info is-vcentered p0 m0">
+<progressive-img class="column img" :src="'https://image.tmdb.org/t/p/w200' + movie.poster_path"
+            :placeholder="'https://image.tmdb.org/t/p/w45' + movie.poster_path" />
+            <div class="column">
+            <p class="bold has-text-white">{{ movie.title }}</p>
+            <p class="has-text-white">Genre: {{ movie.genres[0].name }}</p>
+            <p class="has-text-white"><i class="fas fa-clock" /> {{ movie.runtime }} Mins</p>
+            <router-link :to="`/movie/` + movie.id" class="button is-white is-outlined is-small mt1">
+              View Details
+            </router-link>
+          </div>
       </div>
     </div>
   </main>
@@ -55,5 +72,24 @@ main {
 }
 .img {
   box-shadow: 0 5px 10px #0005;
+}
+.backdrop:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  background-color: #0009;
+  width: 100%;
+  height: 100%;
+}
+.info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 99;
+  width: 80%;
 }
 </style>

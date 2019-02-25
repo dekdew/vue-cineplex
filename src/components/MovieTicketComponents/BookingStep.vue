@@ -29,7 +29,7 @@
       <MovieMiniInfo :movie="movie" />
 			<!-- step 1 -->
       <div class="step-content has-text-centered is-active">
-        <Step1 />
+        <Step1 :cinemas="cinemas" />
       </div>
 
 			<!-- step 2 -->
@@ -67,7 +67,7 @@ import Step1 from '@/components/movieTicketComponents/Step1'
 
 export default {
 	name: 'BookingStep',
-  props: ['movie'],
+  props: ['movie', 'cinemas'],
   components: {
     MovieMiniInfo,
     Step1
