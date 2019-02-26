@@ -2,14 +2,17 @@
   <div id="app">
     <Navbar/>
     <router-view :key="$route.fullPath"/>
+    <seat />
   </div>
 </template>
 
 <script>
 import Navbar from '@/components/Navbar'
+import Seat from '@/components/MovieTicketComponents/Seat'
+
 export default {
   name: 'App',
-  components: {Navbar},
+  components: {Navbar, Seat},
 }
 </script>
 
