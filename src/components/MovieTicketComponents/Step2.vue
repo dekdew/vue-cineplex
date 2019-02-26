@@ -21,11 +21,17 @@
         <p class="bold mt3">CINEMA {{ booking.cinema.theater }}</p>
         <p class="has-text-info">{{ booking.cinema.name }}</p>
         <div class="card mt4 p2 has-text-centered">
-          <p>Selected Seat</p>
-          <div v-if="selected.length != 0" class="columns is-multiline is-centered pt1">
-            <div class="has-text-info bold column is-3" v-for="s in selected" :key="s.seat_id">{{s.seat_id}}</div>
+          <div>
+            <p>Selected Seat</p>
+            <div v-if="selected.length != 0" class="columns is-multiline is-centered pt1">
+              <p class="has-text-info bold column is-3 h4" v-for="s in selected" :key="s.seat_id">{{s.seat_id}}</p>
+            </div>
+            <p v-else class="pt1">-</p>
           </div>
-					<p v-else class="pt1">-</p>
+          <div class="mt4">
+            <p>Total</p>
+            <p class="has-text-info bold h2 pt1">{{ total }} THB</p>
+          </div>
         </div>
       </div>
     </div>
@@ -48,15 +54,27 @@ export default {
   methods: {
     clickSeat: function (e) {
       let index = this.selected.map(x => {
-        return x.seat_id;
-			}).indexOf(e.seat_id);
+        return x.seat_id
+      }).indexOf(e.seat_id)
 
       if (e.isClick) {
-				this.selected.splice(index, 1);
+        this.selected.splice(index, 1);
       } else {
-				this.selected.push(e)
+        this.selected.push(e)
       }
       e.isClick = !e.isClick
+    }
+  },
+  computed: {
+    total: function () {
+      let subtotal = 0
+      this.selected.forEach(seat => {
+        let index = this.seatType.map(x => {
+          return x.type_id
+        }).indexOf(seat.type_id)
+        subtotal += this.seatType[index].price
+      })
+      return subtotal
     }
   }
 }

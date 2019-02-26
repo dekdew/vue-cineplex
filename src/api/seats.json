@@ -4,17 +4,17 @@
 		{
 			"type_id": "01",
 			"name": "Suite (Pair)",
-			"price": "600"
+			"price": 600
 		},
 		{
 			"type_id": "02",
 			"name": "Prime",
-			"price": "190"
+			"price": 190
 		},
 		{
 			"type_id": "03",
 			"name": "Premium",
-			"price": "160"
+			"price": 160
 		}
 	],
 	"rows": [
