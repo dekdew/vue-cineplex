@@ -5,11 +5,20 @@
         <div v-for="row in seats.slice().reverse()" :key="row.id" class="columns has-text-centered">
           <div v-for="seat in row.seats" :key="seat.id" class="column">
             <div class="available" v-if="seat.status" @click="clickSeat(seat)">
-              <img v-if="seat.isClick" class="seat" src="@/assets/seat/select.svg" />
+							<div v-if="seat.isClick && seat.type_id == '01'" class="seat" src="@/assets/seat/select.svg">
+								<img class="seat" src="@/assets/seat/select.svg">
+								<img class="seat" src="@/assets/seat/select.svg">
+							</div>
+              <img v-else-if="seat.isClick" class="seat" src="@/assets/seat/select.svg" />
+							<img v-else-if="seat.type_id == '01'" class="pair" :src="require('@/assets/seat/' + seat.type_id + '.svg')" />
               <img v-else class="seat" :src="require('@/assets/seat/' + seat.type_id + '.svg')" />
             </div>
             <div v-else-if="!seat.status">
-              <img class="seat" src="@/assets/seat/reserved.svg">
+							<div v-if="seat.type_id == '01'">
+								<img class="seat" src="@/assets/seat/reserved.svg">
+								<img class="seat" src="@/assets/seat/reserved.svg">
+							</div>
+              <img v-else class="seat" src="@/assets/seat/reserved.svg">
             </div>
           </div>
         </div>
@@ -82,6 +91,9 @@ export default {
 
 <style scoped>
 .seat {
+	max-height: 48px;
+}
+.pair {
 	max-height: 64px;
 }
 .available {
