@@ -6,22 +6,22 @@
     <div class="container">
       <MovieMiniInfo :movie="movie" :booking="booking" />
       <!-- step 1 -->
-      <div v-show="booking.steps == 0" class="has-text-centered">
+      <div v-if="booking.steps == 0" class="has-text-centered">
         <Step1 v-model="booking" :cinemas="cinemas" />
       </div>
 
       <!-- step 2 -->
-      <div v-show="booking.steps == 1" class="">
+      <div v-if="booking.steps == 1" class="">
         c
       </div>
 
       <!-- step 3 -->
-      <div v-show="booking.steps == 2" class="">
+      <div v-if="booking.steps == 2" class="">
         d
       </div>
 
       <!-- step 4 -->
-      <div v-show="booking.steps == 3" class="">
+      <div v-if="booking.steps == 3" class="">
         e
       </div>
     </div>

@@ -14,13 +14,35 @@
     <div id="navbarBasic" class="navbar-menu" :class="{ 'is-active': showNav }">
       <div class="navbar-end">
         <div class="navbar-item">
-          <div v-show="!isLogin" class="buttons">
+          <div v-if="!isLogin" class="buttons">
             <button class="button is-info" @click="isComponentSignupActive = true;showNav = !showNav">
               Sing Up
             </button>
             <button class="button" @click="isComponentLoginActive = true;showNav = !showNav">
               Login
             </button>
+          </div>
+          <div v-if="isLogin">
+            <nav class="" role="navigation" aria-label="dropdown">
+              <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link">
+                  <i class="far fa-user-circle"/>&nbsp;Passawit
+                </a>
+
+                <div class="navbar-dropdown">
+                  <a class="navbar-item">
+                    My Profile
+                  </a>
+                  <a class="navbar-item">
+                    My Tickets
+                  </a>
+                  <hr class="navbar-divider">
+                  <div class="navbar-item">
+                    <button class="button is-small is-fullwidth" @click="logout"><i class="fa fa-sign-out-alt" />&nbsp;Log Out</button>
+                  </div>
+                </div>
+              </div>
+            </nav>
           </div>
         </div>
       </div>
@@ -29,7 +51,7 @@
       <signup-form v-bind="signupFormProps" />
     </b-modal>
     <b-modal :active.sync="isComponentLoginActive" has-modal-card>
-      <login-form v-bind="loginFormProps" @login="showStatus" />
+      <login-form v-bind="loginFormProps" @login="login" />
     </b-modal>
   </nav>
 </template>
@@ -49,22 +71,25 @@ export default {
 			showNav: false,
 			isComponentSignupActive: false,
       signupFormProps: {
-        email: 'example@mail.com',
+        email: 'passawit@gmail.com',
 				password: 'example',
 				cpassword: 'example'
       },
       isComponentLoginActive: false,
       loginFormProps: {
-        email: 'example@mail.com',
+        email: 'passawit@gmail.com',
         password: 'example'
 			},
 			isLogin: false
     }
 	},
 	methods: {
-		showStatus: function (e) {
-			this.isLogin = e;
-		}
+		login: function (e) {
+			this.isLogin = e
+		},
+    logout: function () {
+      this.isLogin = false
+    }
 	}
 }
 
