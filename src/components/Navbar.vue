@@ -4,8 +4,8 @@
       <router-link to="/" class="navbar-item">
         <img src="../assets/logo.png" height="28">
       </router-link>
-
-      <a role="button" @click="showNav = !showNav" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasic">
+      <a role="button" @click="showNav = !showNav" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+        data-target="navbarBasic">
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
@@ -16,25 +16,15 @@
       <div class="navbar-end">
         <div class="navbar-item">
           <div class="buttons">
-            <!-- <router-link to="/signup" class="button is-info">
-              <strong>Sign up</strong>
-            </router-link> -->
             <section>
-              <button class="button is-info is-medium signin"
-            @click="Sign_in()">
-            <strong>Sign up</strong>
-            
-        </button>
+              <button class="button is-info signin" @click="Sign_in()">
+                Sign up
+              </button>
 
-         <button class="button is-medium login"
-            @click="Login()">
-            <strong>Log in</strong>
-        </button>
-         
+              <button class="button login" @click="Login()">
+                Log in
+              </button>
             </section>
-            
-            
-       
           </div>
         </div>
       </div>
