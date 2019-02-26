@@ -34,7 +34,7 @@
                         11:10
                       </a>
                     </p>
-                    <p class="control steps-action">
+                    <p class="control">
                       <a data-nav="next" class="button is-info px3" @click="updateBooking({steps:1,date:day.toDateString(), time:'13:30', cinema:{theater:theater.theater, name:cinema.name}})">
                         13:30
                       </a>
@@ -42,6 +42,11 @@
                     <p class="control">
                       <a class="button is-info is-outlined px3">
                         18:50
+                      </a>
+                    </p>
+                    <p class="control">
+                      <a class="button is-info is-outlined px3">
+                        22:00
                       </a>
                     </p>
                   </div>

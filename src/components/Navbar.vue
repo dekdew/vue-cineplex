@@ -11,159 +11,66 @@
         <span aria-hidden="true"></span>
       </a>
     </div>
-
     <div id="navbarBasic" class="navbar-menu" :class="{ 'is-active': showNav }">
       <div class="navbar-end">
         <div class="navbar-item">
-          <div class="buttons">
-            <section>
-              <button class="button is-info signin" @click="Sign_in()">
-                Sign up
-              </button>
-
-              <button class="button login" @click="Login()">
-                Log in
-              </button>
-            </section>
+          <div v-show="!isLogin" class="buttons">
+            <button class="button is-info" @click="isComponentSignupActive = true;showNav = !showNav">
+              Sing Up
+            </button>
+            <button class="button" @click="isComponentLoginActive = true;showNav = !showNav">
+              Login
+            </button>
           </div>
         </div>
       </div>
     </div>
+    <b-modal :active.sync="isComponentSignupActive" has-modal-card>
+      <signup-form v-bind="signupFormProps" />
+    </b-modal>
+    <b-modal :active.sync="isComponentLoginActive" has-modal-card>
+      <login-form v-bind="loginFormProps" @login="showStatus" />
+    </b-modal>
   </nav>
 </template>
 
 <script>
-  export default {
-    name: 'Navbar',
-    data() {
-      return {
-        showNav: false
-      }
+import SignupForm from '@/components/SignupForm'
+import LoginForm from '@/components/LoginForm'
+
+export default {
+	name: 'Navbar',
+	components: {
+		SignupForm,
+    LoginForm
+  },
+  data() {
+    return {
+			showNav: false,
+			isComponentSignupActive: false,
+      signupFormProps: {
+        email: 'example@mail.com',
+				password: 'example',
+				cpassword: 'example'
+      },
+      isComponentLoginActive: false,
+      loginFormProps: {
+        email: 'example@mail.com',
+        password: 'example'
+			},
+			isLogin: false
     }
-  }
-</script>
+	},
+	methods: {
+		showStatus: function (e) {
+			this.isLogin = e;
+		}
+	}
+}
 
-<script>
-    const LoginModalForm = {
-        props: ['email', 'password'],
-        template: `
-            <form action="">
-                <div class="modal-card" style="width: auto">
-                    <header class="modal-card-head">
-                        <p class="modal-card-title">Login</p>
-                    </header>
-                    <section class="modal-card-body">
-                        <b-field label="Email">
-                            <b-input
-                                type="email"
-                                :value="email"
-                                placeholder="Your email"
-                                required>
-                            </b-input>
-                        </b-field>
 
-                        <b-field label="Password">
-                            <b-input
-                                type="password"
-                                :value="password"
-                                password-reveal
-                                placeholder="Your password"
-                                required>
-                            </b-input>
-                        </b-field>
-
-                        <b-checkbox>Remember me</b-checkbox>
-                    </section>
-                    <footer class="modal-card-foot">
-                        <button class="button" type="button" @click="$parent.close()">Close</button>
-                        <button class="button is-info">Login</button>
-                    </footer>
-                </div>
-            </form>
-        `
-    };
-    const SigninModalForm = {
-        props: ['email', 'password'],
-        template: `
-            <form action="">
-                <div class="modal-card" style="width: auto">
-                    <header class="modal-card-head">
-                        <p class="modal-card-title">Sign up</p>
-                    </header>
-                    <section class="modal-card-body">
-                        <b-field label="Email">
-                            <b-input
-                                type="email"
-                                :value="email"
-                                placeholder="Your email"
-                                required>
-                            </b-input>
-                        </b-field>
-
-                        <b-field label="Password">
-                            <b-input
-                                type="password"
-                                :value="password"
-                                password-reveal
-                                placeholder="Your password"
-                                required>
-                            </b-input>
-                        </b-field>
-                        <b-field label="Re-Password">
-                            <b-input
-                                type="password"
-                                :value="password"
-                                password-reveal
-                                placeholder="Re-password"
-                                required>
-                            </b-input>
-                        </b-field>
-
-                        
-                    </section>
-                    <footer class="modal-card-foot">
-                        <button class="button" type="button" @click="$parent.close()">Close</button>
-                        <button class="button is-info">Sign up</button>
-                    </footer>
-                </div>
-            </form>
-        `
-    };
-
-    export default {
-      methods: {
-            Login() {
-                this.$modal.open({
-                    parent: this,
-                    component: LoginModalForm,
-                    hasModalCard: true
-                })
-            },
-            Sign_in() {
-                this.$modal.open({
-                    parent: this,
-                    component: SigninModalForm,
-                    hasModalCard: true
-                })
-            }
-        }
-        // components: {
-        //     ModalForm
-        // },
-        // data() {
-        //     return {
-        //         isComponentModalActive: false,
-        //         formProps: {
-        //             email: 'email@example.com',
-        //             password: 'example'
-        //         },
-        //         isComponentSignActive: false
-        //     }
-        // }
-    }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
 </style>
