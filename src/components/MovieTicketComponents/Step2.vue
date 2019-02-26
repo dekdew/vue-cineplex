@@ -44,7 +44,7 @@
               <p class="has-text-info bold h2 pt1">{{ total }} THB</p>
             </div>
           </div>
-					<a v-if="selected.length != 0" class="button is-info is-fullwidth mt4">Continue</a>
+					<a v-if="selected.length != 0" @click="updateBooking" class="button is-info is-fullwidth mt4">Continue</a>
 					<a v-else class="button is-info is-fullwidth mt4" disabled>Continue</a>
         </div>
       </div>
@@ -77,6 +77,22 @@ export default {
         this.selected.push(e)
       }
       e.isClick = !e.isClick
+    },
+    updateBooking: function () {
+      this.booking = {
+        steps: 2,
+        date: this.booking.date,
+        time: this.booking.time,
+        cinema: {
+          theater: this.booking.cinema.theater,
+          name: this.booking.cinema.name
+        },
+				seats: this.selected,
+        total: this.total
+			}
+      this.$emit('input', this.booking)
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
     }
   },
   computed: {

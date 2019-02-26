@@ -35,7 +35,7 @@
                       </a>
                     </p>
                     <p class="control">
-                      <a data-nav="next" class="button is-info px3" @click="updateBooking({steps:1,date:day.toDateString(), time:'13:30', cinema:{theater:theater.theater, name:cinema.name}})">
+                      <a class="button is-info px3" @click="updateBooking({steps:1,date:day.toDateString(), time:'13:30', cinema:{theater:theater.theater, name:cinema.name}, seats:[], total:null})">
                         13:30
                       </a>
                     </p>
@@ -85,6 +85,8 @@ export default {
   methods: {
     updateBooking: function (booking) {
       this.$emit('input', booking)
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
     }
   }
 }

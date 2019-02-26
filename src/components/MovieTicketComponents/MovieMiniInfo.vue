@@ -9,17 +9,27 @@
             :placeholder="'https://image.tmdb.org/t/p/w45' + movie.poster_path" />
           <div class="column">
             <p class="h3 bold">{{ movie.title }}</p>
-            <p class="has-text-info" v-show="booking.date != null">{{ booking.date }} &nbsp;|&nbsp; {{ booking.time }}</p>
-            <div v-show="booking.date == null">
+            <p class="has-text-info" v-if="booking.date != null">{{ booking.date }} &nbsp;|&nbsp; {{ booking.time }}</p>
+            <div v-if="booking.date == null">
               <p class="mt3">Genre: {{ movie.genres[0].name }}</p>
               <p><i class="fas fa-clock" /> {{ movie.runtime }} Mins</p>
               <router-link :to="`/movie/` + movie.id" class="button is-info is-outlined mt3">
                 View Details
               </router-link>
             </div>
-            <div v-show="booking.date != null">
+            <div v-if="booking.date != null">
               <p class="mt3 has-text-info"><i class="fas fa-map-marker-alt" /> &nbsp;{{ booking.cinema.name }}</p>
               <p class="mt1">CINEMA {{ booking.cinema.theater }} &nbsp;|&nbsp; <i class="fas fa-volume-up" /> ENG</p>
+            </div>
+            <div v-if="booking.total != null" class="columns mt3">
+              <div class="column is-two-thirds overflow-auto">
+                <p>Selected Seat</p>
+                  <span class="has-text-info bold h2 pr1" v-for="s in booking.seats" :key="s.seat_id">{{s.seat_id}}</span>
+              </div>
+              <div class="column">
+                <p>Total</p>
+                <p class="has-text-info bold h2">{{ booking.total }} THB</p>
+              </div>
             </div>
           </div>
         </div>
