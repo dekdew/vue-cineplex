@@ -1,8 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/Home'
-import LogIn from '@/components/LogIn'
-import SingUp from '@/components/SignUp'
 import MovieDetails from '@/components/MovieDetails'
 import MovieTicket from '@/components/MovieTicket'
 
@@ -18,16 +16,6 @@ export default new Router({
       path: '/',
       name: 'Home',
       component: Home
-    },
-    {
-      path: '/login',
-      name: 'LogIn',
-      component: LogIn
-    },
-    {
-      path: '/signup',
-      name: 'SingUp',
-      component: SingUp
     },
     {
       path: '/movie/:id',

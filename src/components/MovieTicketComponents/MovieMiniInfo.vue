@@ -1,6 +1,6 @@
 <template>
   <main style="background-color:#f5f7fb;">
-    <p class="has-text-centered pt1 h1 has-text-info">{{ steps[booking.steps] }}</p>
+    <p class="has-text-centered pt2 h1 has-text-info">{{ steps[booking.steps] }}</p>
     <div class="container py3 is-hidden-mobile">
       <div class="box"></div>
       <div class="poster px4">
