@@ -35,7 +35,7 @@
                       </a>
                     </p>
                     <p class="control steps-action">
-                      <a data-nav="next" class="button is-info px3" @click="updateBooking({date:day.toDateString(), time:'13:30', cinema:{theater:theater.theater, name:cinema.name}})">
+                      <a data-nav="next" class="button is-info px3" @click="updateBooking({steps:1,date:day.toDateString(), time:'13:30', cinema:{theater:theater.theater, name:cinema.name}})">
                         13:30
                       </a>
                     </p>

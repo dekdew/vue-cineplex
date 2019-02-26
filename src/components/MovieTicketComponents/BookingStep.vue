@@ -1,67 +1,36 @@
 <template>
-  <div class="container steps pt2">
-    <div class="step-item is-info is-active">
-      <div class="step-marker">1</div>
-      <div class="step-details">
-        <p>Select Showtime</p>
-      </div>
-    </div>
-    <div class="step-item is-info">
-      <div class="step-marker">2</div>
-      <div class="step-details">
-        <p>Select Seat</p>
-      </div>
-    </div>
-    <div class="step-item is-info">
-      <div class="step-marker">3</div>
-      <div class="step-details">
-        <p>Payment</p>
-      </div>
-    </div>
-    <div class="step-item is-info">
-      <div class="step-marker">4</div>
-      <div class="step-details">
-        <p>Finish</p>
-      </div>
-    </div>
-
-    <div class="steps-content">
+  <div class="container pt2">
+    <div class="pb2">
+    <step-indicator :current="booking.steps" total="4" currentColor="#2e66cf" defaultColor="#aaa" />
+</div>
+    <div class="container">
       <MovieMiniInfo :movie="movie" :booking="booking" />
-			<!-- step 1 -->
-      <div class="step-content has-text-centered is-active">
+      <!-- step 1 -->
+      <div v-show="booking.steps == 0" class="has-text-centered">
         <Step1 v-model="booking" :cinemas="cinemas" />
       </div>
 
-			<!-- step 2 -->
-      <div class="step-content has-text-centered">
+      <!-- step 2 -->
+      <div v-show="booking.steps == 1" class="">
         c
       </div>
 
-			<!-- step 3 -->
-      <div class="step-content has-text-centered">
+      <!-- step 3 -->
+      <div v-show="booking.steps == 2" class="">
         d
       </div>
 
-			<!-- step 4 -->
-      <div class="step-content has-text-centered">
+      <!-- step 4 -->
+      <div v-show="booking.steps == 3" class="">
         e
-      </div>
-    </div>
-
-    <div class="steps-actions">
-      <div class="steps-action">
-        <a data-nav="previous" class="button is-light">Previous</a>
-      </div>
-      <div class="steps-action">
-        <a data-nav="next" class="button is-light">Next</a>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import bulmaSteeps from 'bulma-steps/dist/js/bulma-steps.min.js'
-import 'bulma-steps/dist/css/bulma-steps.min.css';
+import StepIndicator from 'vue-step-indicator'
+import 'vue-step-indicator/dist/vue-step-indicator.css'
 import MovieMiniInfo from '@/components/movieTicketComponents/MovieMiniInfo'
 import Step1 from '@/components/movieTicketComponents/Step1'
 
@@ -69,13 +38,14 @@ export default {
 	name: 'BookingStep',
   props: ['movie', 'cinemas'],
   components: {
+    StepIndicator,
     MovieMiniInfo,
     Step1
   },
   data() {
     return {
-      steps: [],
       booking: {
+        steps: 0,
         date: null,
         time: null,
         cinema: {
@@ -87,7 +57,6 @@ export default {
 		}
   },
   mounted: function () {
-    this.steps = bulmaSteeps.attach()
   },
 }
 </script>
