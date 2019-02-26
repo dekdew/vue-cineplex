@@ -2,45 +2,50 @@
   <div class="container py4">
     <div class="columns">
       <div class="column is-three-quarters p4">
+        <img class="mb3" src="@/assets/screen.svg">
         <div v-for="row in seats.slice().reverse()" :key="row.id" class="columns has-text-centered">
           <div v-for="seat in row.seats" :key="seat.id" class="column">
             <div class="available" v-if="seat.status" @click="clickSeat(seat)">
-							<div v-if="seat.isClick && seat.type_id == '01'" class="seat" src="@/assets/seat/select.svg">
-								<img class="seat" src="@/assets/seat/select.svg">
-								<img class="seat" src="@/assets/seat/select.svg">
-							</div>
+              <div v-if="seat.isClick && seat.type_id == '01'" class="seat" src="@/assets/seat/select.svg">
+                <img class="seat" src="@/assets/seat/select.svg">
+                <img class="seat" src="@/assets/seat/select.svg">
+              </div>
               <img v-else-if="seat.isClick" class="seat" src="@/assets/seat/select.svg" />
-							<img v-else-if="seat.type_id == '01'" class="pair" :src="require('@/assets/seat/' + seat.type_id + '.svg')" />
+              <img v-else-if="seat.type_id == '01'" class="pair" :src="require('@/assets/seat/' + seat.type_id + '.svg')" />
               <img v-else class="seat" :src="require('@/assets/seat/' + seat.type_id + '.svg')" />
             </div>
             <div v-else-if="!seat.status">
-							<div v-if="seat.type_id == '01'">
-								<img class="seat" src="@/assets/seat/reserved.svg">
-								<img class="seat" src="@/assets/seat/reserved.svg">
-							</div>
+              <div v-if="seat.type_id == '01'">
+                <img class="seat" src="@/assets/seat/reserved.svg">
+                <img class="seat" src="@/assets/seat/reserved.svg">
+              </div>
               <img v-else class="seat" src="@/assets/seat/reserved.svg">
             </div>
           </div>
         </div>
       </div>
-      <div class="recap column box p3 is-one-quarters">
-        <p class="bold">{{ movie.title }}</p>
-        <p class="has-text-info">{{ booking.date }}</p>
-        <p class="has-text-info">{{ booking.time }}</p>
-        <p class="bold mt3">CINEMA {{ booking.cinema.theater }}</p>
-        <p class="has-text-info">{{ booking.cinema.name }}</p>
-        <div class="card mt4 p2 has-text-centered">
-          <div>
-            <p>Selected Seat</p>
-            <div v-if="selected.length != 0" class="columns is-multiline is-centered pt1">
-              <p class="has-text-info bold column is-3 h4" v-for="s in selected" :key="s.seat_id">{{s.seat_id}}</p>
+      <div class="column is-one-quarters">
+        <div class="recap p3 card">
+          <p class="bold">{{ movie.title }}</p>
+          <p class="has-text-info">{{ booking.date }}</p>
+          <p class="has-text-info">{{ booking.time }}</p>
+          <p class="bold mt3">CINEMA {{ booking.cinema.theater }}</p>
+          <p class="has-text-info">{{ booking.cinema.name }}</p>
+          <div class="card mt4 p2 has-text-centered">
+            <div>
+              <p>Selected Seat</p>
+              <div v-if="selected.length != 0" class="columns is-multiline is-centered pt1">
+                <p class="has-text-info bold column is-3 h4" v-for="s in selected" :key="s.seat_id">{{s.seat_id}}</p>
+              </div>
+              <p v-else class="pt1">-</p>
             </div>
-            <p v-else class="pt1">-</p>
+            <div class="mt4">
+              <p>Total</p>
+              <p class="has-text-info bold h2 pt1">{{ total }} THB</p>
+            </div>
           </div>
-          <div class="mt4">
-            <p>Total</p>
-            <p class="has-text-info bold h2 pt1">{{ total }} THB</p>
-          </div>
+					<a v-if="selected.length != 0" class="button is-info is-fullwidth mt4">Continue</a>
+					<a v-else class="button is-info is-fullwidth mt4" disabled>Continue</a>
         </div>
       </div>
     </div>
