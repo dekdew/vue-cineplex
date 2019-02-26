@@ -12,7 +12,7 @@
 
       <!-- step 2 -->
       <div v-if="booking.steps == 1" class="">
-        c
+        <Step2 :booking="booking" :movie="movie" />
       </div>
 
       <!-- step 3 -->
@@ -33,6 +33,7 @@ import StepIndicator from 'vue-step-indicator'
 import 'vue-step-indicator/dist/vue-step-indicator.css'
 import MovieMiniInfo from '@/components/movieTicketComponents/MovieMiniInfo'
 import Step1 from '@/components/movieTicketComponents/Step1'
+import Step2 from '@/components/movieTicketComponents/Step2'
 
 export default {
 	name: 'BookingStep',
@@ -40,7 +41,8 @@ export default {
   components: {
     StepIndicator,
     MovieMiniInfo,
-    Step1
+    Step1,
+    Step2
   },
   data() {
     return {
