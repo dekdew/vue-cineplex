@@ -1,7 +1,7 @@
 <template>
-  <router-link :to="`/movie/` + movie.id">
+  <router-link :to="`/booking/` + movie.id">
     <div class="card">
-      <div class="poster image is-2by3"><img :src="'https://image.tmdb.org/t/p/w500' + movie.poster_path"></div>
+      <div class="poster"><progressive-background class="img" :src="'https://image.tmdb.org/t/p/w500' + movie.poster_path" :placeholder="'https://image.tmdb.org/t/p/w45' + movie.poster_path" /></div>
       <div class="details">
         <p class="has-text-white h3">{{ movie.original_title }}<br><span class="has-text-warning p0 m0 h4">Release
             date: {{ new Date(movie.release_date).toLocaleDateString('en-TH') }}</span></p>
@@ -26,7 +26,6 @@
     props: ['movie', 'genres'],
     data() {
       return {
-
       }
     }
   }
@@ -44,6 +43,7 @@
 .card .poster {
   position: relative;
   overflow: hidden;
+  height: 480px;
 }
 
 .card .poster:before {
@@ -62,13 +62,13 @@
   bottom: 0;
 }
 
-.card .poster img {
-  width: 100%;
+.card .poster .img {
+  z-index: 0;
   transition: 0.5s;
 }
 
-.card:hover .poster img {
-  transform: translateY(-30px);
+.card:hover .poster .img {
+  transform: translateY(-30px) !important;
 }
 
 .details {

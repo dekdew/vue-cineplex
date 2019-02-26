@@ -10,6 +10,12 @@ import VueCarousel from 'vue-carousel';
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import VueYoutube from 'vue-youtube'
+import VueProgressiveImage from 'vue-progressive-image'
+
+Vue.use(VueProgressiveImage, {
+  blur: 30,
+  delay: 1000
+})
  
 Vue.use(VueYoutube)
  

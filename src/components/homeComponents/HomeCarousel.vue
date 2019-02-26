@@ -1,16 +1,17 @@
 <template>
 <carousel :autoplay="true" :loop="true" :perPage="1" :paginationEnabled="false" :autoplayTimeout="5000"
   :autoplayHoverPause="false">
-  <slide v-for="slide in slides" :key="slide">
-    <div class="main has-text-white" :style="{ 'background-image': 'url(https://image.tmdb.org/t/p/w1280' + slide.backdrop_path + ')' }">
+  <slide v-for="slide in slides" :key="slide.id">
+    <div class="main has-text-white has-background-black">
+    <progressive-background :src="'https://image.tmdb.org/t/p/w1280' + slide.backdrop_path" :placeholder="'https://image.tmdb.org/t/p/w200' + slide.backdrop_path" />
       <div class="container">
         <div class="inner">
           <h1 class="h1">{{ slide.title }}</h1>
           <p>In Theaters {{ new Date(slide.release_date).toLocaleDateString('en-TH', { year: 'numeric', month: 'long', day: 'numeric' }) }}</p>
-          <a class="button my1 is-info">
+          <router-link :to="`/booking/` + slide.id" class="button my1 is-info">
             <strong>GET TICKETS</strong>
             <img src="../../assets/ticket.svg" width="40px">
-          </a>
+          </router-link>
           <p>
           <router-link :to="`/movie/` + slide.id" class="more has-text-white">
             View Details
@@ -62,7 +63,7 @@ export default {
   z-index: 2;
   position: absolute;
   left: 50%;
-  bottom: 7em;
+  bottom: 5em;
 }
 .inner {
   position: relative;

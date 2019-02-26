@@ -1,9 +1,9 @@
 <template>
-  <div class="container py4">
+  <div class="container p3">
     <div class="columns">
       <div class="column is-two-fifths p2">
-        <div class="image is-2by3">
-          <img :src="'https://image.tmdb.org/t/p/w500' + images.posters[1].file_path">
+        <div class="image">
+          <progressive-background class="img" :src="'https://image.tmdb.org/t/p/w500' + images.posters[1].file_path" :placeholder="'https://image.tmdb.org/t/p/w45' + images.posters[1].file_path" />
           <div class="release-date has-background-info">
             <p class="has-text-white h1">{{ new Date(data.release_date).getDate() }}</p>
             <div class="divider"></div>
@@ -28,11 +28,10 @@
 
         <p class="h2 pt2">Actors</p>
         <div class="actors">
-          <div class="actor inline-block card mx1" v-for="cast in credits.cast" :key="cast">
+          <div class="actor inline-block card mx1" v-for="cast in credits.cast" :key="cast.id">
             <div class="card-image">
               <figure>
-                <img v-if="cast.profile_path != null" :src="'https://image.tmdb.org/t/p/w200' + cast.profile_path" :alt="cast.name">
-                <img v-else :src="'https://image.tmdb.org/t/p/w200' + images.posters[0].file_path" :alt="cast.name">
+                <progressive-background class="img" :src="'https://image.tmdb.org/t/p/w200' + cast.profile_path" :alt="cast.name" :placeholder="'https://image.tmdb.org/t/p/w45' + cast.profile_path" :fallback="'https://image.tmdb.org/t/p/w200' + images.posters[0].file_path" />
               </figure>
             </div>
             <div class="card-content">
@@ -85,6 +84,10 @@ export default {
   margin: 10px auto;
 }
 
+.image .img {
+  z-index: 0;
+}
+
 .btn-play {
   position: absolute;
   bottom: 30px;
@@ -108,7 +111,7 @@ export default {
   width: 170px;
   overflow: hidden;
 }
-.actor img {
+.actor .img {
   width: 170px;
   height: 170px;
   object-fit: cover;

@@ -1,18 +1,19 @@
 <template>
-  <div class="main has-text-white" :style="{ 'background-image': 'url(https://image.tmdb.org/t/p/w1280' + images.backdrops[1].file_path + ')' }">
+  <div class="main has-text-white has-background-black">
+    <progressive-background :src="'https://image.tmdb.org/t/p/w1280' + images.backdrops[1].file_path" :placeholder="'https://image.tmdb.org/t/p/w45' + images.backdrops[1].file_path" />
     <div class="container">
       <div class="inner">
         <h1 class="h1">{{ data.title }}</h1>
         <p><i class="fas fa-clock fa-inverse" /> {{ data.runtime }} Mins</p>
         <div class="tags are-medium">
-          <span class="tag is-dark" v-for="genre in data.genres" :key="genre">
+          <span class="tag is-dark" v-for="genre in data.genres" :key="genre.id">
             {{ genre.name }}
           </span>
         </div>
-        <a class="button is-info">
+        <router-link :to="`/booking/` + data.id" class="button my1 is-info">
           <strong>GET TICKETS</strong>
           <img src="../../assets/ticket.svg" width="40px">
-        </a>
+        </router-link>
       </div>
     </div>
   </div>
@@ -54,8 +55,8 @@ export default {
   left: 0;
   pointer-events: none;
   background-image: linear-gradient(to bottom,
-    rgba(255, 255, 255, 0),
-    rgba(0, 0, 0, 1) 80%);
+    #fff0,
+    #000 90%);
   width: 100%;
   height: 25em;
 }
