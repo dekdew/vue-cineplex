@@ -24,7 +24,7 @@
             <div v-if="booking.total != null" class="columns mt3">
               <div class="column is-two-thirds overflow-auto">
                 <p>Selected Seat</p>
-                  <span class="has-text-info bold h2 pr1" v-for="s in booking.seats" :key="s.seat_id">{{s.seat_id}}</span>
+                  <span class="has-text-info h2 pr1" v-for="s in booking.seats" :key="s.seat_id">{{s.seat_id}}</span>
               </div>
               <div class="column">
                 <p>Total</p>

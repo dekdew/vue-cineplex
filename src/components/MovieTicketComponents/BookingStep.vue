@@ -17,7 +17,7 @@
 
       <!-- step 3 -->
       <div v-if="booking.steps == 2" class="">
-        <Step3 :booking="booking" />
+        <Step3 v-model="booking" :booking="booking" />
       </div>
 
       <!-- step 4 -->
