@@ -88,7 +88,8 @@ export default {
           name: this.booking.cinema.name
         },
 				seats: this.selected,
-        total: this.total
+        total: this.total,
+        movie: this.movie
 			}
       this.$emit('input', this.booking)
       document.body.scrollTop = 0;

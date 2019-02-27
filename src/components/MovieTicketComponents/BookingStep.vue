@@ -22,7 +22,7 @@
 
       <!-- step 4 -->
       <div v-if="booking.steps == 3" class="">
-        e
+        <Step4 :booking="booking" />
       </div>
     </div>
   </div>
@@ -35,6 +35,7 @@ import MovieMiniInfo from '@/components/movieTicketComponents/MovieMiniInfo'
 import Step1 from '@/components/movieTicketComponents/Step1'
 import Step2 from '@/components/movieTicketComponents/Step2'
 import Step3 from '@/components/movieTicketComponents/Step3'
+import Step4 from '@/components/movieTicketComponents/Step4'
 
 export default {
 	name: 'BookingStep',
@@ -44,7 +45,8 @@ export default {
     MovieMiniInfo,
     Step1,
     Step2,
-    Step3
+    Step3,
+    Step4
   },
   data() {
     return {
