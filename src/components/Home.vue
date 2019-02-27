@@ -23,9 +23,29 @@
               </div>
             </b-tab-item>
           </div>
-          <Panel v-model="search" :genres="genres" />
+          <!-- panel -->
+          <aside class="menu mt3 column is-2 is-hidden-mobile p0 m0">
+            <b-field expanded>
+              <b-input placeholder="Search..." type="search" icon="search" v-model="search.text" @input="updateSearch" />
+            </b-field>
+            <div class="box">
+              <p class="menu-label">
+                Genre
+              </p>
+              {{selectGenre}}
+              <ul class="menu-list" v-for="genre in genres" :key="genre.id">
+                <li><a @click="search.genre = genre.id; updateSearch">{{ genre.name }}</a></li>
+              </ul>
+              <!-- <select v-model="selected">
+    <option v-for="genre in genres" :key="genre.id" v-bind:value="genre.id">
+    {{ genre.name }}
+  </option>
+    </select> -->
+            </div>
+          </aside>
         </div>
       </b-tabs>
+      {{search}}
     </div>
   </div>
 </template>
@@ -36,7 +56,6 @@ import Loading from '@/components/Loading'
 import Showtime from '@/components/homeComponents/Showtime'
 import HomeCarousel from '@/components/homeComponents/HomeCarousel'
 import MovieCard from '@/components/homeComponents/MovieCard'
-import Panel from '@/components/homeComponents/Panel'
 
 export default {
   name: 'Home',
@@ -45,7 +64,6 @@ export default {
     Showtime,
     HomeCarousel,
     MovieCard,
-    Panel
   },
   data() {
     return {
@@ -54,7 +72,10 @@ export default {
       movies: null,
       upcoming: null,
       genres: null,
-      search: ''
+      search: {
+        text: '',
+        genre: ''
+      }
     }
   },
   mounted() {
@@ -77,14 +98,32 @@ export default {
     })
   }, 1500),
   computed: {
-    filteredMovie() {
+    filterGenre() {
       return this.movies.filter(movie => {
-        return movie.title.toLowerCase().includes(this.search.toLowerCase())
+        if(this.search.genre === '') {
+          return true
+        } else {
+          return movie.genre_ids.includes(this.search.genre)
+        }
+      })
+    },
+    filteredMovie() {
+      return this.filterGenre.filter(movie => {
+        return movie.title.toLowerCase().includes(this.search.text.toLowerCase())
+      })
+    },
+    filterGenreComing() {
+      return this.upcoming.filter(movie => {
+        if(this.search.genre === '') {
+          return true
+        } else {
+          return movie.genre_ids.includes(this.search.genre)
+        }
       })
     },
     filteredMovieComing() {
-      return this.upcoming.filter(movie => {
-        return movie.title.toLowerCase().includes(this.search.toLowerCase())
+      return this.filterGenreComing.filter(movie => {
+        return movie.title.toLowerCase().includes(this.search.text.toLowerCase())
       })
     }
   }
