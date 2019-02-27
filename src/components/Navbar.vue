@@ -33,9 +33,9 @@
                   <a class="navbar-item">
                     My Profile
                   </a>
-                  <a class="navbar-item">
+                  <router-link to="/myticket" class="navbar-item">
                     My Tickets
-                  </a>
+                  </router-link>
                   <hr class="navbar-divider">
                   <div class="navbar-item">
                     <button class="button is-small is-fullwidth" @click="logout"><i class="fa fa-sign-out-alt" />&nbsp;Log Out</button>
