@@ -35,7 +35,7 @@
                       </a>
                     </p>
                     <p class="control">
-                      <a class="button is-info px3" disabled>
+                      <a class="button px3" disabled>
                         13:30
                       </a>
                     </p>
