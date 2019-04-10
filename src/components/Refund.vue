@@ -15,7 +15,7 @@
         <b-input placeholder="Mobile" icon="mobile-alt"/>
       </b-field>
 
-      <h2 class="has-text-centered h2 has-text-info mt3">Selected Payment Method</h2>
+      <h2 class="has-text-centered h2 has-text-info mt3">Selected Refund Method</h2>
       <div>
         <b-field position="is-centered block mt1">
           <b-radio class="mx3" v-model="radio" native-value="cash" type="is-info">Cash</b-radio>
