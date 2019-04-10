@@ -35,17 +35,17 @@
                       </a>
                     </p>
                     <p class="control">
-                      <a class="button is-info px3" @click="updateBooking({steps:1,date:day.toDateString(), time:'13:30', cinema:{theater:theater.theater, name:cinema.name}, seats:[], total:null})">
+                      <a class="button is-info px3" disabled>
                         13:30
                       </a>
                     </p>
                     <p class="control">
-                      <a class="button is-info is-outlined px3">
+                      <a class="button is-info is-outlined px3" @click="updateBooking({steps:1,date:day.toDateString(), time:'18:50', cinema:{theater:theater.theater, name:cinema.name}, seats:[], total:null})">
                         18:50
                       </a>
                     </p>
                     <p class="control">
-                      <a class="button is-info is-outlined px3">
+                      <a class="button is-info is-outlined px3" @click="updateBooking({steps:1,date:day.toDateString(), time:'22:00', cinema:{theater:theater.theater, name:cinema.name}, seats:[], total:null})">
                         22:00
                       </a>
                     </p>
