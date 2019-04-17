@@ -1,8 +1,21 @@
 <template>
   <div class="container py4">
     <div class="columns">
-      <div class="column is-three-quarters p4">
-        <img class="mb3" src="@/assets/screen.svg">
+      <div class="column is-three-quarters px4 pb4 pt1">
+        <nav class="level">
+          <div v-for="type in seatType" :key="type.type_id" class="level-item has-text-centered">
+            <div>
+              <p class="heading">{{ type.name }}</p>
+              <img class="price" :src="require('@/assets/seat/' + type.type_id + '.svg')">
+              <p class="h3">{{ type.price }}</p>
+            </div>
+          </div>
+        </nav>
+        <div class="screen">
+          <img src="@/assets/screen.svg">
+          <p class="mb3">SCREEN</p>
+        </div>
+        
         <div
           v-for="row in seats.slice().reverse()"
           :key="row.id"
@@ -165,10 +178,18 @@ export default {
   right: -2%;
 }
 .screen {
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  text-align: center;
+  vertical-align: middle;
+  line-height: 90px;
+}
+.screen img {
+  margin-bottom: -9em;
+}
+.price {
+  height: 32px;
+}
+.level {
+  margin-bottom: -4em;
 }
 </style>
 

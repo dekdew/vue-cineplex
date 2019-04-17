@@ -10,7 +10,7 @@
           <router-link to="/refund" class="delete"></router-link>
           <p class="bold">Shazam!</p>
           <p>Genre: Action | 132 Mins</p>
-          <p class="has-text-info mt2">Wed Apr 10 2019 | 18:50</p>
+          <p class="has-text-info mt2">Wed Apr 17 2019 | 18:50</p>
           <p class="has-text-info">Emprive' Cineclub Emporium Sukhumvit</p>
         </div>
       </div>
