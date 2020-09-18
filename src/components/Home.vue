@@ -53,9 +53,9 @@
 <script>
 import debounce from "lodash/debounce";
 import Loading from "@/components/Loading.vue";
-import Showtime from "@/components/homeComponents/Showtime.vue";
-import HomeCarousel from "@/components/homeComponents/HomeCarousel.vue";
-import MovieCard from "@/components/homeComponents/MovieCard.vue";
+import Showtime from "@/components/HomeComponents/Showtime.vue";
+import HomeCarousel from "@/components/HomeComponents/HomeCarousel.vue";
+import MovieCard from "@/components/HomeComponents/MovieCard.vue";
 
 export default {
   name: "Home",
