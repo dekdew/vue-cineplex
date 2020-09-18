@@ -19,8 +19,8 @@
 <script>
 import debounce from "lodash/debounce";
 import Loading from "@/components/Loading.vue";
-import MovieHero from "@/components/movieDetailsComponents/MovieHero.vue";
-import MovieInfo from "@/components/movieDetailsComponents/MovieInfo.vue";
+import MovieHero from "@/components/MovieDetailsComponents/MovieHero.vue";
+import MovieInfo from "@/components/MovieDetailsComponents/MovieInfo.vue";
 import MovieCard from "@/components/homeComponents/MovieCard.vue";
 
 export default {

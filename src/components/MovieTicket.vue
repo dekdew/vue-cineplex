@@ -9,8 +9,8 @@
 <script>
 import debounce from "lodash/debounce";
 import Loading from "@/components/Loading.vue";
-import BookingNav from "@/components/movieTicketComponents/BookingNav.vue";
-import BookingStep from "@/components/movieTicketComponents/BookingStep.vue";
+import BookingNav from "@/components/MovieTicketComponents/BookingNav.vue";
+import BookingStep from "@/components/MovieTicketComponents/BookingStep.vue";
 import api from "../api/cinemas.json";
 
 export default {

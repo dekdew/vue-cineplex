@@ -36,11 +36,11 @@
 <script>
 import StepIndicator from "vue-step-indicator";
 import "vue-step-indicator/dist/vue-step-indicator.css";
-import MovieMiniInfo from "@/components/movieTicketComponents/MovieMiniInfo.vue";
-import Step1 from "@/components/movieTicketComponents/Step1.vue";
-import Step2 from "@/components/movieTicketComponents/Step2.vue";
-import Step3 from "@/components/movieTicketComponents/Step3.vue";
-import Step4 from "@/components/movieTicketComponents/Step4.vue";
+import MovieMiniInfo from "@/components/MovieTicketComponents/MovieMiniInfo.vue";
+import Step1 from "@/components/MovieTicketComponents/Step1.vue";
+import Step2 from "@/components/MovieTicketComponents/Step2.vue";
+import Step3 from "@/components/MovieTicketComponents/Step3.vue";
+import Step4 from "@/components/MovieTicketComponents/Step4.vue";
 
 export default {
   name: "BookingStep",
