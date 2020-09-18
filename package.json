@@ -10,7 +10,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.18.1",
     "basscss": "^8.0.10",
     "buefy": "^0.7.2",
     "bulma-steps": "^2.2.1",
