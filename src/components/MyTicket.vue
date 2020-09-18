@@ -23,7 +23,7 @@ export default {
   props: ["movie", "cinemas"],
   data() {
     return {};
-  }
+  },
 };
 </script>
 

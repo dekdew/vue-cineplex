@@ -1,477 +1,477 @@
 [
-	{
-		"region_id": 1,
-		"name": "Bangkok And Metropolitan Region",
-		"locations": [
-			{
-				"location_id": 1,
-				"name": "Emprive' Cineclub Emporium Sukhumvit",
-				"theaters": [
-					{
-						"tid": "010101",
-						"theater": "1",
-						"type": "Dolby Atmos"
-					},
-					{
-						"tid": "010102",
-						"theater": "2",
-						"type": "Dolby Atmos"
-					},
-					{
-						"tid": "010103",
-						"theater": "3",
-						"type": "Digital Cinema"
-					},
-					{
-						"tid": "010104",
-						"theater": "4",
-						"type": "Digital Cinema"
-					},
-					{
-						"tid": "010105",
-						"theater": "5",
-						"type": "Digital Cinema"
-					}
-				]
-			},
-			{
-				"location_id": 2,
-				"name": "SF WORLD CINEMA Central World",
-				"theaters": [
-					{
-						"tid": "010201",
-						"theater": "1",
-						"type": "CAT First Class Cinema"
-					},
-					{
-						"tid": "010202",
-						"theater": "2",
-						"type": "CAT First Class Cinema"
-					},
-					{
-						"tid": "010203",
-						"theater": "3",
-						"type": "MX4D"
-					},
-					{
-						"tid": "010204",
-						"theater": "4",
-						"type": "Dolby Atmos"
-					},
-					{
-						"tid": "010205",
-						"theater": "5",
-						"type": "Happiness World Screen"
-					},
-					{
-						"tid": "010206",
-						"theater": "6",
-						"type": "Mastercard Cinema"
-					},
-					{
-						"tid": "010207",
-						"theater": "7",
-						"type": "Digital Cinema"
-					},
-					{
-						"tid": "010208",
-						"theater": "8",
-						"type": "Digital Cinema"
-					},
-					{
-						"tid": "010209",
-						"theater": "9",
-						"type": "Digital Cinema"
-					},
-					{
-						"tid": "010210",
-						"theater": "10",
-						"type": "Digital Cinema"
-					},
-					{
-						"tid": "010211",
-						"theater": "11",
-						"type": "Digital Cinema"
-					},
-					{
-						"tid": "010212",
-						"theater": "12",
-						"type": "Digital Cinema"
-					},
-					{
-						"tid": "010213",
-						"theater": "13",
-						"type": "Digital Cinema"
-					},
-					{
-						"tid": "010214",
-						"theater": "14",
-						"type": "Digital Cinema"
-					},
-					{
-						"tid": "010215",
-						"theater": "15",
-						"type": "Digital Cinema"
-					}
-				]
-			},
-			{
-				"location_id": 3,
-				"name": "SFX CINEMA Central Rama 9",
-				"theaters": []
-			},
-			{
-				"location_id": 4,
-				"name": "SFX CINEMA Central Plaza Ladprao",
-				"theaters": []
-			},
-			{
-				"location_id": 5,
-				"name": "SFX CINEMA Central Plaza Chaengwattana",
-				"theaters": []
-			},
-			{
-				"location_id": 6,
-				"name": "SFX CINEMA The Crystal Ekamai-Ramintra",
-				"theaters": []
-			},
-			{
-				"location_id": 7,
-				"name": "SF CINEMA MBK Center",
-				"theaters": []
-			},
-			{
-				"location_id": 8,
-				"name": "SF CINEMA Terminal 21 Asok",
-				"theaters": []
-			},
-			{
-				"location_id": 9,
-				"name": "SF CINEMA The Mall Bangkapi",
-				"theaters": []
-			},
-			{
-				"location_id": 10,
-				"name": "SF CINEMA The Mall Bangkae",
-				"theaters": []
-			},
-			{
-				"location_id": 11,
-				"name": "SF CINEMA The Mall Thapra",
-				"theaters": []
-			},
-			{
-				"location_id": 12,
-				"name": "SF CINEMA The Crystal Ratchapruek",
-				"theaters": []
-			},
-			{
-				"location_id": 13,
-				"name": "SF CINEMA Central Plaza Ramintra",
-				"theaters": []
-			},
-			{
-				"location_id": 14,
-				"name": "SF CINEMA Central Plaza Rattanatibeth",
-				"theaters": []
-			},
-			{
-				"location_id": 15,
-				"name": "SF CINEMA Robinson Srisaman",
-				"theaters": []
-			},
-			{
-				"location_id": 16,
-				"name": "SF CINEMA Big C Bangplee",
-				"theaters": [
-					{
-						"tid": "011601",
-						"theater": "1",
-						"type": "Dolby Atmos"
-					},
-					{
-						"tid": "011602",
-						"theater": "2",
-						"type": "Dolby Atmos"
-					},
-					{
-						"tid": "011603",
-						"theater": "3",
-						"type": "Digital Cinema"
-					},
-					{
-						"tid": "011604",
-						"theater": "4",
-						"type": "Digital Cinema"
-					},
-					{
-						"tid": "011605",
-						"theater": "5",
-						"type": "Digital Cinema"
-					}
-				]
-			},
-			{
-				"location_id": 17,
-				"name": "SF CINEMA Jas Urban Srinakarin",
-				"theaters": []
-			},
-			{
-				"location_id": 18,
-				"name": "SF CINEMA The Square Bangyai",
-				"theaters": []
-			},
-			{
-				"location_id": 19,
-				"name": "SF CINEMA Big C Phetkasem 2",
-				"theaters": []
-			}
-		]
-	},
-	{
-		"region_id": 2,
-		"name": "Central Region",
-		"locations": [
-			{
-				"location_id": 20,
-				"name": "SF CINEMA Central Salaya",
-				"theaters": [
-					{
-						"tid": "022001",
-						"theater": "1",
-						"type": "Digital Cinema"
-					}
-				]
-			},
-			{
-				"location_id": 21,
-				"name": "SF CINEMA Central Plaza Mahachai",
-				"theaters":[]
-			},
-			{
-				"location_id": 22,
-				"name": "SF CINEMA Robinson Lopburi",
-				"theaters":[]
-			},
-			{
-				"location_id": 23,
-				"name": "SF CINEMA Robinson Suphanburi",
-				"theaters":[]
-			},
-			{
-				"location_id": 24,
-				"name": "SF CINEMA Robinson Kanchanaburi",
-				"theaters":[]
-			},
-			{
-				"location_id": 25,
-				"name": "SF CINEMA Robinson Ratchaburi",
-				"theaters":[]
-			},
-			{
-				"location_id": 26,
-				"name": "SF CINEMA Big C Phetchaburi",
-				"theaters":[]
-			},
-			{
-				"location_id": 27,
-				"name": "SF CINEMA Big C Samut Songkram",
-				"theaters":[]
-			}
-		]
-	},
-	{
-		"region_id": 3,
-		"name": "Northern Region",
-		"locations": [
-			{
-				"location_id": 28,
-				"name": "SFX CINEMA MAYA Chiangmai",
-				"theaters":[]
-			},
-			{
-				"location_id": 29,
-				"name": "SF CINEMA Central Plaza Lampang",
-				"theaters":[]
-			},
-			{
-				"location_id": 30,
-				"name": "SF CINEMA Robinson Maesot",
-				"theaters":[]
-			},
-			{
-				"location_id": 31,
-				"name": "SF CINEMA Tops Plaza Phayao",
-				"theaters":[]
-			},
-			{
-				"location_id": 32,
-				"name": "SF CINEMA Promenada Chiangmai",
-				"theaters":[]
-			}
-		]
-	},
-	{
-		"region_id": 4,
-		"name": "Northeastern Region",
-		"locations": [
-			{
-				"location_id": 33,
-				"name": "SFX CINEMA Central Plaza Nakornratchasima",
-				"theaters":[]
-			},
-			{
-				"location_id": 34,
-				"name": "SF CINEMA Terminal 21 Korat",
-				"theaters":[]
-			},
-			{
-				"location_id": 35,
-				"name": "SF CINEMA Central Khonkaen",
-				"theaters":[]
-			},
-			{
-				"location_id": 36,
-				"name": "SF CINEMA Sunee Tower Ubonratchathani",
-				"theaters":[]
-			},
-			{
-				"location_id": 37,
-				"name": "SF CINEMA Landmark Plaza Udonthani",
-				"theaters":[]
-			},
-			{
-				"location_id": 38,
-				"name": "SF CINEMA Sermthai Complex Mahasarakham",
-				"theaters":[]
-			},
-			{
-				"location_id": 39,
-				"name": "SF CINEMA Robinson Surin",
-				"theaters":[]
-			},
-			{
-				"location_id": 40,
-				"name": "SF CINEMA Robinson Buriram",
-				"theaters":[]
-			}
-		]
-	},
-	{
-		"region_id": 5,
-		"name": "Eastern Region",
-		"locations": [
-			{
-				"location_id": 41,
-				"name": "SFX CINEMA Central Festival Pattaya Beach",
-				"theaters":[]
-			},
-			{
-				"location_id": 42,
-				"name": "SFX Cinema Terminal 21 Pattaya",
-				"theaters":[]
-			},
-			{
-				"location_id": 43,
-				"name": "SF CINEMA Central Marina Pattaya",
-				"theaters":[]
-			},
-			{
-				"location_id": 44,
-				"name": "SF CINEMA Central Chonburi",
-				"theaters":[]
-			},
-			{
-				"location_id": 45,
-				"name": "SF CINEMA Robinson Lifestyle Chonburi",
-				"theaters":[]
-			},
-			{
-				"location_id": 46,
-				"name": "SF CINEMA Big C Sakeaw",
-				"theaters":[]
-			},
-			{
-				"location_id": 47,
-				"name": "SF CINEMA Laemtong Bangsaen",
-				"theaters":[]
-			},
-			{
-				"location_id": 48,
-				"name": "SF CINEMA Habor Laemchabang",
-				"theaters":[]
-			},
-			{
-				"location_id": 49,
-				"name": "SF CINEMA Robinson Chachoengsao",
-				"theaters":[]
-			},
-			{
-				"location_id": 50,
-				"name": "SF CINEMA Passione Rayong",
-				"theaters":[]
-			},
-			{
-				"location_id": 51,
-				"name": "SF CINEMA Robinson Chantaburi",
-				"theaters":[]
-			},
-			{
-				"location_id": 52,
-				"name": "SF CINEMA Big C Prachinburi",
-				"theaters":[]
-			},
-			{
-				"location_id": 53,
-				"name": "SF CINEMA Robinson Prachinburi",
-				"theaters":[]
-			},
-			{
-				"location_id": 54,
-				"name": "SF CINEMA Lotus Sattahip",
-				"theaters":[]
-			}
-		]
-	},
-	{
-		"region_id": 6,
-		"name": "Southern Region",
-		"locations": [
-			{
-				"location_id": 55,
-				"name": "SFX CINEMA Central Festival Phuket",
-				"theaters":[]
-			},
-			{
-				"location_id": 56,
-				"name": "SF CINEMA Jungceylon Patong",
-				"theaters":[]
-			},
-			{
-				"location_id": 57,
-				"name": "SF CINEMA Central Plaza Suratthani",
-				"theaters":[]
-			},
-			{
-				"location_id": 58,
-				"name": "SF CINEMA Coliseum Suratthani",
-				"theaters":[]
-			},
-			{
-				"location_id": 59,
-				"name": "SF CINEMA Central Plaza Nakhon Si Thammarat",
-				"theaters":[]
-			},
-			{
-				"location_id": 60,
-				"name": "SF CINEMA Robinson Nakhon Si Thammarat",
-				"theaters":[]
-			},
-			{
-				"location_id": 61,
-				"name": "SF CINEMA Robinson Trang",
-				"theaters":[]
-			}
-		]
-	}
+  {
+    "region_id": 1,
+    "name": "Bangkok And Metropolitan Region",
+    "locations": [
+      {
+        "location_id": 1,
+        "name": "Emprive' Cineclub Emporium Sukhumvit",
+        "theaters": [
+          {
+            "tid": "010101",
+            "theater": "1",
+            "type": "Dolby Atmos"
+          },
+          {
+            "tid": "010102",
+            "theater": "2",
+            "type": "Dolby Atmos"
+          },
+          {
+            "tid": "010103",
+            "theater": "3",
+            "type": "Digital Cinema"
+          },
+          {
+            "tid": "010104",
+            "theater": "4",
+            "type": "Digital Cinema"
+          },
+          {
+            "tid": "010105",
+            "theater": "5",
+            "type": "Digital Cinema"
+          }
+        ]
+      },
+      {
+        "location_id": 2,
+        "name": "SF WORLD CINEMA Central World",
+        "theaters": [
+          {
+            "tid": "010201",
+            "theater": "1",
+            "type": "CAT First Class Cinema"
+          },
+          {
+            "tid": "010202",
+            "theater": "2",
+            "type": "CAT First Class Cinema"
+          },
+          {
+            "tid": "010203",
+            "theater": "3",
+            "type": "MX4D"
+          },
+          {
+            "tid": "010204",
+            "theater": "4",
+            "type": "Dolby Atmos"
+          },
+          {
+            "tid": "010205",
+            "theater": "5",
+            "type": "Happiness World Screen"
+          },
+          {
+            "tid": "010206",
+            "theater": "6",
+            "type": "Mastercard Cinema"
+          },
+          {
+            "tid": "010207",
+            "theater": "7",
+            "type": "Digital Cinema"
+          },
+          {
+            "tid": "010208",
+            "theater": "8",
+            "type": "Digital Cinema"
+          },
+          {
+            "tid": "010209",
+            "theater": "9",
+            "type": "Digital Cinema"
+          },
+          {
+            "tid": "010210",
+            "theater": "10",
+            "type": "Digital Cinema"
+          },
+          {
+            "tid": "010211",
+            "theater": "11",
+            "type": "Digital Cinema"
+          },
+          {
+            "tid": "010212",
+            "theater": "12",
+            "type": "Digital Cinema"
+          },
+          {
+            "tid": "010213",
+            "theater": "13",
+            "type": "Digital Cinema"
+          },
+          {
+            "tid": "010214",
+            "theater": "14",
+            "type": "Digital Cinema"
+          },
+          {
+            "tid": "010215",
+            "theater": "15",
+            "type": "Digital Cinema"
+          }
+        ]
+      },
+      {
+        "location_id": 3,
+        "name": "SFX CINEMA Central Rama 9",
+        "theaters": []
+      },
+      {
+        "location_id": 4,
+        "name": "SFX CINEMA Central Plaza Ladprao",
+        "theaters": []
+      },
+      {
+        "location_id": 5,
+        "name": "SFX CINEMA Central Plaza Chaengwattana",
+        "theaters": []
+      },
+      {
+        "location_id": 6,
+        "name": "SFX CINEMA The Crystal Ekamai-Ramintra",
+        "theaters": []
+      },
+      {
+        "location_id": 7,
+        "name": "SF CINEMA MBK Center",
+        "theaters": []
+      },
+      {
+        "location_id": 8,
+        "name": "SF CINEMA Terminal 21 Asok",
+        "theaters": []
+      },
+      {
+        "location_id": 9,
+        "name": "SF CINEMA The Mall Bangkapi",
+        "theaters": []
+      },
+      {
+        "location_id": 10,
+        "name": "SF CINEMA The Mall Bangkae",
+        "theaters": []
+      },
+      {
+        "location_id": 11,
+        "name": "SF CINEMA The Mall Thapra",
+        "theaters": []
+      },
+      {
+        "location_id": 12,
+        "name": "SF CINEMA The Crystal Ratchapruek",
+        "theaters": []
+      },
+      {
+        "location_id": 13,
+        "name": "SF CINEMA Central Plaza Ramintra",
+        "theaters": []
+      },
+      {
+        "location_id": 14,
+        "name": "SF CINEMA Central Plaza Rattanatibeth",
+        "theaters": []
+      },
+      {
+        "location_id": 15,
+        "name": "SF CINEMA Robinson Srisaman",
+        "theaters": []
+      },
+      {
+        "location_id": 16,
+        "name": "SF CINEMA Big C Bangplee",
+        "theaters": [
+          {
+            "tid": "011601",
+            "theater": "1",
+            "type": "Dolby Atmos"
+          },
+          {
+            "tid": "011602",
+            "theater": "2",
+            "type": "Dolby Atmos"
+          },
+          {
+            "tid": "011603",
+            "theater": "3",
+            "type": "Digital Cinema"
+          },
+          {
+            "tid": "011604",
+            "theater": "4",
+            "type": "Digital Cinema"
+          },
+          {
+            "tid": "011605",
+            "theater": "5",
+            "type": "Digital Cinema"
+          }
+        ]
+      },
+      {
+        "location_id": 17,
+        "name": "SF CINEMA Jas Urban Srinakarin",
+        "theaters": []
+      },
+      {
+        "location_id": 18,
+        "name": "SF CINEMA The Square Bangyai",
+        "theaters": []
+      },
+      {
+        "location_id": 19,
+        "name": "SF CINEMA Big C Phetkasem 2",
+        "theaters": []
+      }
+    ]
+  },
+  {
+    "region_id": 2,
+    "name": "Central Region",
+    "locations": [
+      {
+        "location_id": 20,
+        "name": "SF CINEMA Central Salaya",
+        "theaters": [
+          {
+            "tid": "022001",
+            "theater": "1",
+            "type": "Digital Cinema"
+          }
+        ]
+      },
+      {
+        "location_id": 21,
+        "name": "SF CINEMA Central Plaza Mahachai",
+        "theaters": []
+      },
+      {
+        "location_id": 22,
+        "name": "SF CINEMA Robinson Lopburi",
+        "theaters": []
+      },
+      {
+        "location_id": 23,
+        "name": "SF CINEMA Robinson Suphanburi",
+        "theaters": []
+      },
+      {
+        "location_id": 24,
+        "name": "SF CINEMA Robinson Kanchanaburi",
+        "theaters": []
+      },
+      {
+        "location_id": 25,
+        "name": "SF CINEMA Robinson Ratchaburi",
+        "theaters": []
+      },
+      {
+        "location_id": 26,
+        "name": "SF CINEMA Big C Phetchaburi",
+        "theaters": []
+      },
+      {
+        "location_id": 27,
+        "name": "SF CINEMA Big C Samut Songkram",
+        "theaters": []
+      }
+    ]
+  },
+  {
+    "region_id": 3,
+    "name": "Northern Region",
+    "locations": [
+      {
+        "location_id": 28,
+        "name": "SFX CINEMA MAYA Chiangmai",
+        "theaters": []
+      },
+      {
+        "location_id": 29,
+        "name": "SF CINEMA Central Plaza Lampang",
+        "theaters": []
+      },
+      {
+        "location_id": 30,
+        "name": "SF CINEMA Robinson Maesot",
+        "theaters": []
+      },
+      {
+        "location_id": 31,
+        "name": "SF CINEMA Tops Plaza Phayao",
+        "theaters": []
+      },
+      {
+        "location_id": 32,
+        "name": "SF CINEMA Promenada Chiangmai",
+        "theaters": []
+      }
+    ]
+  },
+  {
+    "region_id": 4,
+    "name": "Northeastern Region",
+    "locations": [
+      {
+        "location_id": 33,
+        "name": "SFX CINEMA Central Plaza Nakornratchasima",
+        "theaters": []
+      },
+      {
+        "location_id": 34,
+        "name": "SF CINEMA Terminal 21 Korat",
+        "theaters": []
+      },
+      {
+        "location_id": 35,
+        "name": "SF CINEMA Central Khonkaen",
+        "theaters": []
+      },
+      {
+        "location_id": 36,
+        "name": "SF CINEMA Sunee Tower Ubonratchathani",
+        "theaters": []
+      },
+      {
+        "location_id": 37,
+        "name": "SF CINEMA Landmark Plaza Udonthani",
+        "theaters": []
+      },
+      {
+        "location_id": 38,
+        "name": "SF CINEMA Sermthai Complex Mahasarakham",
+        "theaters": []
+      },
+      {
+        "location_id": 39,
+        "name": "SF CINEMA Robinson Surin",
+        "theaters": []
+      },
+      {
+        "location_id": 40,
+        "name": "SF CINEMA Robinson Buriram",
+        "theaters": []
+      }
+    ]
+  },
+  {
+    "region_id": 5,
+    "name": "Eastern Region",
+    "locations": [
+      {
+        "location_id": 41,
+        "name": "SFX CINEMA Central Festival Pattaya Beach",
+        "theaters": []
+      },
+      {
+        "location_id": 42,
+        "name": "SFX Cinema Terminal 21 Pattaya",
+        "theaters": []
+      },
+      {
+        "location_id": 43,
+        "name": "SF CINEMA Central Marina Pattaya",
+        "theaters": []
+      },
+      {
+        "location_id": 44,
+        "name": "SF CINEMA Central Chonburi",
+        "theaters": []
+      },
+      {
+        "location_id": 45,
+        "name": "SF CINEMA Robinson Lifestyle Chonburi",
+        "theaters": []
+      },
+      {
+        "location_id": 46,
+        "name": "SF CINEMA Big C Sakeaw",
+        "theaters": []
+      },
+      {
+        "location_id": 47,
+        "name": "SF CINEMA Laemtong Bangsaen",
+        "theaters": []
+      },
+      {
+        "location_id": 48,
+        "name": "SF CINEMA Habor Laemchabang",
+        "theaters": []
+      },
+      {
+        "location_id": 49,
+        "name": "SF CINEMA Robinson Chachoengsao",
+        "theaters": []
+      },
+      {
+        "location_id": 50,
+        "name": "SF CINEMA Passione Rayong",
+        "theaters": []
+      },
+      {
+        "location_id": 51,
+        "name": "SF CINEMA Robinson Chantaburi",
+        "theaters": []
+      },
+      {
+        "location_id": 52,
+        "name": "SF CINEMA Big C Prachinburi",
+        "theaters": []
+      },
+      {
+        "location_id": 53,
+        "name": "SF CINEMA Robinson Prachinburi",
+        "theaters": []
+      },
+      {
+        "location_id": 54,
+        "name": "SF CINEMA Lotus Sattahip",
+        "theaters": []
+      }
+    ]
+  },
+  {
+    "region_id": 6,
+    "name": "Southern Region",
+    "locations": [
+      {
+        "location_id": 55,
+        "name": "SFX CINEMA Central Festival Phuket",
+        "theaters": []
+      },
+      {
+        "location_id": 56,
+        "name": "SF CINEMA Jungceylon Patong",
+        "theaters": []
+      },
+      {
+        "location_id": 57,
+        "name": "SF CINEMA Central Plaza Suratthani",
+        "theaters": []
+      },
+      {
+        "location_id": 58,
+        "name": "SF CINEMA Coliseum Suratthani",
+        "theaters": []
+      },
+      {
+        "location_id": 59,
+        "name": "SF CINEMA Central Plaza Nakhon Si Thammarat",
+        "theaters": []
+      },
+      {
+        "location_id": 60,
+        "name": "SF CINEMA Robinson Nakhon Si Thammarat",
+        "theaters": []
+      },
+      {
+        "location_id": 61,
+        "name": "SF CINEMA Robinson Trang",
+        "theaters": []
+      }
+    ]
+  }
 ]

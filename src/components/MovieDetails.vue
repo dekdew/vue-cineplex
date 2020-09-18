@@ -17,20 +17,20 @@
 </template>
 
 <script>
-import debounce from 'lodash/debounce'
-import Loading from '@/components/Loading'
-import MovieHero from '@/components/movieDetailsComponents/MovieHero'
-import MovieInfo from '@/components/movieDetailsComponents/MovieInfo'
-import MovieCard from '@/components/homeComponents/MovieCard'
+import debounce from "lodash/debounce";
+import Loading from "@/components/Loading.vue";
+import MovieHero from "@/components/movieDetailsComponents/MovieHero.vue";
+import MovieInfo from "@/components/movieDetailsComponents/MovieInfo.vue";
+import MovieCard from "@/components/homeComponents/MovieCard.vue";
 
 export default {
-  name: 'MovieDetails',
-  props: ['id'],
+  name: "MovieDetails",
+  props: ["id"],
   components: {
     Loading,
     MovieHero,
     MovieInfo,
-    MovieCard
+    MovieCard,
   },
   data() {
     return {
@@ -40,38 +40,71 @@ export default {
       images: null,
       credits: null,
       recommendations: null,
-      genres: null
-    }
+      genres: null,
+    };
   },
   mounted() {
-    this.axios.get(`https://api.themoviedb.org/3/movie/` + this.id + `?api_key=bb6f51bef07465653c3e553d6ab161a8&language=en-US`).then((response) => {
-      this.data = response.data
-    })
-    this.axios.get(`https://api.themoviedb.org/3/movie/` + this.id + `/videos?api_key=bb6f51bef07465653c3e553d6ab161a8&language=en-US`).then((response) => {
-      this.videos = response.data.results
-    })
-    this.axios.get(`https://api.themoviedb.org/3/movie/` + this.id + `/images?api_key=bb6f51bef07465653c3e553d6ab161a8`).then((response) => {
-      this.images = response.data
-    })
-    this.axios.get(`https://api.themoviedb.org/3/movie/` + this.id + `/credits?api_key=bb6f51bef07465653c3e553d6ab161a8`).then((response) => {
-      this.credits = response.data
-    })
-    this.axios.get(`https://api.themoviedb.org/3/movie/` + this.id + `/recommendations?api_key=bb6f51bef07465653c3e553d6ab161a8`).then((response) => {
-      this.recommendations = response.data.results
-    })
-    this.axios.get(`https://api.themoviedb.org/3/genre/movie/list?api_key=bb6f51bef07465653c3e553d6ab161a8`).then((response) => {
-      this.genres = response.data.genres
-    })
+    this.axios
+      .get(
+        `https://api.themoviedb.org/3/movie/` +
+          this.id +
+          `?api_key=bb6f51bef07465653c3e553d6ab161a8&language=en-US`
+      )
+      .then((response) => {
+        this.data = response.data;
+      });
+    this.axios
+      .get(
+        `https://api.themoviedb.org/3/movie/` +
+          this.id +
+          `/videos?api_key=bb6f51bef07465653c3e553d6ab161a8&language=en-US`
+      )
+      .then((response) => {
+        this.videos = response.data.results;
+      });
+    this.axios
+      .get(
+        `https://api.themoviedb.org/3/movie/` +
+          this.id +
+          `/images?api_key=bb6f51bef07465653c3e553d6ab161a8`
+      )
+      .then((response) => {
+        this.images = response.data;
+      });
+    this.axios
+      .get(
+        `https://api.themoviedb.org/3/movie/` +
+          this.id +
+          `/credits?api_key=bb6f51bef07465653c3e553d6ab161a8`
+      )
+      .then((response) => {
+        this.credits = response.data;
+      });
+    this.axios
+      .get(
+        `https://api.themoviedb.org/3/movie/` +
+          this.id +
+          `/recommendations?api_key=bb6f51bef07465653c3e553d6ab161a8`
+      )
+      .then((response) => {
+        this.recommendations = response.data.results;
+      });
+    this.axios
+      .get(
+        `https://api.themoviedb.org/3/genre/movie/list?api_key=bb6f51bef07465653c3e553d6ab161a8`
+      )
+      .then((response) => {
+        this.genres = response.data.genres;
+      });
   },
   updated: debounce(function () {
     this.$nextTick(() => {
-      this.isLoad = false // runs only once
-    })
-  }, 1500)
-}
+      this.isLoad = false; // runs only once
+    });
+  }, 1500),
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
 </style>

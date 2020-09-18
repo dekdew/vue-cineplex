@@ -1,38 +1,44 @@
 <template>
-<carousel :autoplay="true" :loop="true" :perPage="1" :paginationEnabled="false" :autoplayTimeout="5000"
-  :autoplayHoverPause="false">
-  <slide v-for="slide in slides" :key="slide.id">
-    <div class="main has-text-white has-background-black">
-    <progressive-background :src="'https://image.tmdb.org/t/p/w1280' + slide.backdrop_path" :placeholder="'https://image.tmdb.org/t/p/w200' + slide.backdrop_path" />
-      <div class="container">
-        <div class="inner">
-          <h1 class="h1">{{ slide.title }}</h1>
-          <p>In Theaters {{ new Date(slide.release_date).toLocaleDateString('en-TH', { year: 'numeric', month: 'long', day: 'numeric' }) }}</p>
-          <router-link :to="`/booking/` + slide.id" class="button my1 is-info">
-            <strong>GET TICKETS</strong>
-            <img src="../../assets/ticket.svg" width="40px">
-          </router-link>
-          <p>
-          <router-link :to="`/movie/` + slide.id" class="more has-text-white">
-            View Details
-          </router-link>
-          </p>
+  <carousel
+    :autoplay="true"
+    :loop="true"
+    :perPage="1"
+    :paginationEnabled="false"
+    :autoplayTimeout="5000"
+    :autoplayHoverPause="false"
+  >
+    <slide v-for="slide in slides" :key="slide.id">
+      <div class="main has-text-white has-background-black">
+        <progressive-background
+          :src="'https://image.tmdb.org/t/p/w1280' + slide.backdrop_path"
+          :placeholder="'https://image.tmdb.org/t/p/w200' + slide.backdrop_path"
+        />
+        <div class="container">
+          <div class="inner">
+            <h1 class="h1">{{ slide.title }}</h1>
+            <p>In Theaters {{ new Date(slide.release_date).toLocaleDateString('en-TH', { year: 'numeric', month: 'long', day: 'numeric' }) }}</p>
+            <router-link :to="`/booking/` + slide.id" class="button my1 is-info">
+              <strong>GET TICKETS</strong>
+              <img src="../../assets/ticket.svg" width="40px" />
+            </router-link>
+            <p>
+              <router-link :to="`/movie/` + slide.id" class="more has-text-white">View Details</router-link>
+            </p>
+          </div>
         </div>
       </div>
-    </div>
-  </slide>
-</carousel>
+    </slide>
+  </carousel>
 </template>
 
 <script>
 export default {
-  name: 'HomeCarousel',
-  props: ['slides', 'genres'],
-  data () {
-    return {
-    }
-  }
-}
+  name: "HomeCarousel",
+  props: ["slides", "genres"],
+  data() {
+    return {};
+  },
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -52,9 +58,11 @@ export default {
   bottom: 0;
   left: 0;
   pointer-events: none;
-  background-image: linear-gradient(to bottom,
+  background-image: linear-gradient(
+    to bottom,
     rgba(255, 255, 255, 0),
-    rgba(0, 0, 0, 1) 80%);
+    rgba(0, 0, 0, 1) 80%
+  );
   width: 100%;
   height: 25em;
 }

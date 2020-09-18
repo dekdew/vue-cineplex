@@ -1,15 +1,29 @@
 <template>
   <router-link :to="`/booking/` + movie.id">
     <div class="card">
-      <div class="poster"><progressive-background class="img" :src="'https://image.tmdb.org/t/p/w500' + movie.poster_path" :placeholder="'https://image.tmdb.org/t/p/w45' + movie.poster_path" /></div>
+      <div class="poster">
+        <progressive-background
+          class="img"
+          :src="'https://image.tmdb.org/t/p/w500' + movie.poster_path"
+          :placeholder="'https://image.tmdb.org/t/p/w45' + movie.poster_path"
+        />
+      </div>
       <div class="details">
-        <p class="has-text-white h3">{{ movie.original_title }}<br><span class="has-text-warning p0 m0 h4">Release
-            date: {{ new Date(movie.release_date).toLocaleDateString('en-TH') }}</span></p>
+        <p class="has-text-white h3">
+          {{ movie.original_title }}
+          <br />
+          <span class="has-text-warning p0 m0 h4">
+            Release
+            date: {{ new Date(movie.release_date).toLocaleDateString('en-TH') }}
+          </span>
+        </p>
 
         <div class="tags are-medium">
-          <span class="tag is-dark" v-for="genre in movie.genre_ids" :key="genre">
-            {{ genres.find(item => item.id === genre).name }}
-          </span>
+          <span
+            class="tag is-dark"
+            v-for="genre in movie.genre_ids"
+            :key="genre"
+          >{{ genres.find(item => item.id === genre).name }}</span>
         </div>
 
         <div class="info">
@@ -21,15 +35,13 @@
 </template>
 
 <script>
-  export default {
-    name: 'MovieCard',
-    props: ['movie', 'genres'],
-    data() {
-      return {
-      }
-    }
-  }
-
+export default {
+  name: "MovieCard",
+  props: ["movie", "genres"],
+  data() {
+    return {};
+  },
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -48,12 +60,12 @@
 
 .card .poster:before {
   content: "";
-  position: absolute ;
+  position: absolute;
   bottom: -190px;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(0deg,#000 50%, transparent);
+  background: linear-gradient(0deg, #000 50%, transparent);
   transition: 0.5s;
   z-index: 1;
 }

@@ -12,7 +12,7 @@
         />
       </b-field>
       <b-field class="my1">
-        <b-input placeholder="Mobile" icon="mobile-alt"/>
+        <b-input placeholder="Mobile" icon="mobile-alt" />
       </b-field>
 
       <h2 class="has-text-centered h2 has-text-info mt3">Selected Refund Method</h2>
@@ -28,21 +28,21 @@
         <div class="columns">
           <div class="column is-10">
             <b-field>
-              <b-input placeholder="Card Number" icon="credit-card" expanded="true"/>
+              <b-input placeholder="Card Number" icon="credit-card" expanded="true" />
             </b-field>
           </div>
           <div class="column">
             <b-field>
-              <b-input placeholder="CVV" expanded="true" maxlength="3"/>
+              <b-input placeholder="CVV" expanded="true" maxlength="3" />
             </b-field>
           </div>
         </div>
       </div>
 
       <div class="buttons is-centered mt2">
-				<span v-if="radio == ''" class="button is-info" disabled>Refund</span>
-        <router-link to="/"  v-else class="button is-info">Refund</router-link >
-        <router-link to="/myticket" class="button is-info is-outlined">Cancel</router-link >
+        <span v-if="radio == ''" class="button is-info" disabled>Refund</span>
+        <router-link to="/" v-else class="button is-info">Refund</router-link>
+        <router-link to="/myticket" class="button is-info is-outlined">Cancel</router-link>
       </div>
     </div>
   </div>
@@ -52,9 +52,9 @@
 export default {
   data() {
     return {
-      radio: ""
+      radio: "",
     };
-  }
+  },
 };
 </script>
 

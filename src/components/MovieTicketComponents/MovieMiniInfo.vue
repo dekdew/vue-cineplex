@@ -5,26 +5,46 @@
       <div class="box"></div>
       <div class="poster px4">
         <div class="columns is-vcentered px4">
-          <progressive-img class="img column mx3" :src="'https://image.tmdb.org/t/p/w300' + movie.poster_path"
-            :placeholder="'https://image.tmdb.org/t/p/w45' + movie.poster_path" />
+          <progressive-img
+            class="img column mx3"
+            :src="'https://image.tmdb.org/t/p/w300' + movie.poster_path"
+            :placeholder="'https://image.tmdb.org/t/p/w45' + movie.poster_path"
+          />
           <div class="column">
             <p class="h3 bold">{{ movie.title }}</p>
-            <p class="has-text-info" v-if="booking.date != null">{{ booking.date }} &nbsp;|&nbsp; {{ booking.time }}</p>
+            <p
+              class="has-text-info"
+              v-if="booking.date != null"
+            >{{ booking.date }} &nbsp;|&nbsp; {{ booking.time }}</p>
             <div v-if="booking.date == null">
               <p class="mt3">Genre: {{ movie.genres[0].name }}</p>
-              <p><i class="fas fa-clock" /> {{ movie.runtime }} Mins</p>
-              <router-link :to="`/movie/` + movie.id" class="button is-info is-outlined mt3">
-                View Details
-              </router-link>
+              <p>
+                <i class="fas fa-clock" />
+                {{ movie.runtime }} Mins
+              </p>
+              <router-link
+                :to="`/movie/` + movie.id"
+                class="button is-info is-outlined mt3"
+              >View Details</router-link>
             </div>
             <div v-if="booking.date != null">
-              <p class="mt3 has-text-info"><i class="fas fa-map-marker-alt" /> &nbsp;{{ booking.cinema.name }}</p>
-              <p class="mt1">CINEMA {{ booking.cinema.theater }} &nbsp;|&nbsp; <i class="fas fa-volume-up" /> ENG</p>
+              <p class="mt3 has-text-info">
+                <i class="fas fa-map-marker-alt" />
+                &nbsp;{{ booking.cinema.name }}
+              </p>
+              <p class="mt1">
+                CINEMA {{ booking.cinema.theater }} &nbsp;|&nbsp;
+                <i class="fas fa-volume-up" /> ENG
+              </p>
             </div>
             <div v-if="booking.total != null" class="columns mt3">
               <div class="column is-two-thirds overflow-auto">
                 <p>Selected Seat</p>
-                  <span class="has-text-info h2 pr1" v-for="s in booking.seats" :key="s.seat_id">{{s.seat_id}}</span>
+                <span
+                  class="has-text-info h2 pr1"
+                  v-for="s in booking.seats"
+                  :key="s.seat_id"
+                >{{s.seat_id}}</span>
               </div>
               <div class="column">
                 <p>Total</p>
@@ -37,17 +57,28 @@
     </div>
 
     <div class="is-hidden-tablet">
-      <progressive-background class="backdrop" :src="'https://image.tmdb.org/t/p/w500' + movie.backdrop_path"
-        :placeholder="'https://image.tmdb.org/t/p/w45' + movie.backdrop_path" />
+      <progressive-background
+        class="backdrop"
+        :src="'https://image.tmdb.org/t/p/w500' + movie.backdrop_path"
+        :placeholder="'https://image.tmdb.org/t/p/w45' + movie.backdrop_path"
+      />
       <div class="columns is-mobile info is-vcentered p0 m0">
-        <progressive-img class="column img" :src="'https://image.tmdb.org/t/p/w200' + movie.poster_path" :placeholder="'https://image.tmdb.org/t/p/w45' + movie.poster_path" />
+        <progressive-img
+          class="column img"
+          :src="'https://image.tmdb.org/t/p/w200' + movie.poster_path"
+          :placeholder="'https://image.tmdb.org/t/p/w45' + movie.poster_path"
+        />
         <div class="column">
           <p class="bold has-text-white">{{ movie.title }}</p>
           <p class="has-text-white">Genre: {{ movie.genres[0].name }}</p>
-          <p class="has-text-white"><i class="fas fa-clock" /> {{ movie.runtime }} Mins</p>
-          <router-link :to="`/movie/` + movie.id" class="button is-white is-outlined is-small mt1">
-            View Details
-          </router-link>
+          <p class="has-text-white">
+            <i class="fas fa-clock" />
+            {{ movie.runtime }} Mins
+          </p>
+          <router-link
+            :to="`/movie/` + movie.id"
+            class="button is-white is-outlined is-small mt1"
+          >View Details</router-link>
         </div>
       </div>
     </div>
@@ -56,19 +87,14 @@
 
 <script>
 export default {
-  name: 'MovieMiniInfo',
-  props: ['movie', 'booking'],
-  data () {
+  name: "MovieMiniInfo",
+  props: ["movie", "booking"],
+  data() {
     return {
-      steps: [
-        'Select Showtime',
-        'Select Seat',
-        'Payment',
-        'Finish'
-      ]
-    }
-  }
-}
+      steps: ["Select Showtime", "Select Seat", "Payment", "Finish"],
+    };
+  },
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

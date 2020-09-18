@@ -3,22 +3,36 @@
     <div class="columns">
       <div class="column is-two-fifths p2">
         <div class="image">
-          <progressive-background class="img" :src="'https://image.tmdb.org/t/p/w500' + images.posters[1].file_path" :placeholder="'https://image.tmdb.org/t/p/w45' + images.posters[1].file_path" />
+          <progressive-background
+            class="img"
+            :src="'https://image.tmdb.org/t/p/w500' + images.posters[1].file_path"
+            :placeholder="'https://image.tmdb.org/t/p/w45' + images.posters[1].file_path"
+          />
           <div class="release-date has-background-info">
             <p class="has-text-white h1">{{ new Date(data.release_date).getDate() }}</p>
             <div class="divider"></div>
-            <p class="has-text-white">{{ month[new Date(data.release_date).getMonth()] }} {{ new
-              Date(data.release_date).getFullYear() }}</p>
+            <p class="has-text-white">
+              {{ month[new Date(data.release_date).getMonth()] }} {{ new
+              Date(data.release_date).getFullYear() }}
+            </p>
           </div>
-          <div @click="isVideoModalActive = true" class="btn-play has-background-info"><i class="fas fa-play fa-inverse" /></div>
+          <div @click="isVideoModalActive = true" class="btn-play has-background-info">
+            <i class="fas fa-play fa-inverse" />
+          </div>
         </div>
       </div>
       <div class="movie-info column is-three-fifths p3">
         <div class="header-section">
           <p class="is-size-2">{{ data.title }}</p>
-          <p>Release Date: {{ new Date(data.release_date).toLocaleDateString('en-TH', { year: 'numeric', month: 'long',
-            day: 'numeric' }) }}</p>
-          <p>Genre: {{ data.genres[0].name }} | <i class="fas fa-clock" /> {{ data.runtime }} Mins</p>
+          <p>
+            Release Date: {{ new Date(data.release_date).toLocaleDateString('en-TH', { year: 'numeric', month: 'long',
+            day: 'numeric' }) }}
+          </p>
+          <p>
+            Genre: {{ data.genres[0].name }} |
+            <i class="fas fa-clock" />
+            {{ data.runtime }} Mins
+          </p>
         </div>
 
         <div class="overview pt2">
@@ -31,7 +45,13 @@
           <div class="actor inline-block card mx1" v-for="cast in credits.cast" :key="cast.id">
             <div class="card-image">
               <figure>
-                <progressive-background class="img" :src="'https://image.tmdb.org/t/p/w200' + cast.profile_path" :alt="cast.name" :placeholder="'https://image.tmdb.org/t/p/w45' + cast.profile_path" :fallback="'https://image.tmdb.org/t/p/w200' + images.posters[0].file_path" />
+                <progressive-background
+                  class="img"
+                  :src="'https://image.tmdb.org/t/p/w200' + cast.profile_path"
+                  :alt="cast.name"
+                  :placeholder="'https://image.tmdb.org/t/p/w45' + cast.profile_path"
+                  :fallback="'https://image.tmdb.org/t/p/w200' + images.posters[0].file_path"
+                />
               </figure>
             </div>
             <div class="card-content">
@@ -55,15 +75,28 @@
 
 <script>
 export default {
-  name: 'MovieInfo',
-  props: ['data', 'images', 'videos', 'credits'],
+  name: "MovieInfo",
+  props: ["data", "images", "videos", "credits"],
   data() {
     return {
-      month: ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL","AUG", "SEP", "OCT", "NOV", "DEC"],
-      isVideoModalActive: false
-    }
-  }
-}
+      month: [
+        "JAN",
+        "FEB",
+        "MAR",
+        "APR",
+        "MAY",
+        "JUN",
+        "JUL",
+        "AUG",
+        "SEP",
+        "OCT",
+        "NOV",
+        "DEC",
+      ],
+      isVideoModalActive: false,
+    };
+  },
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -72,7 +105,6 @@ export default {
   position: absolute;
   top: 30px;
   left: -20px;
-  ;
   padding: 10px;
   text-align: center;
 }

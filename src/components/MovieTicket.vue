@@ -7,42 +7,52 @@
 </template>
 
 <script>
-import debounce from 'lodash/debounce'
-import Loading from '@/components/Loading'
-import BookingNav from '@/components/movieTicketComponents/BookingNav'
-import BookingStep from '@/components/movieTicketComponents/BookingStep'
-import api from '../api/cinemas.json'
+import debounce from "lodash/debounce";
+import Loading from "@/components/Loading.vue";
+import BookingNav from "@/components/movieTicketComponents/BookingNav.vue";
+import BookingStep from "@/components/movieTicketComponents/BookingStep.vue";
+import api from "../api/cinemas.json";
 
 export default {
-  name: 'MovieTicket',
-  props: ['id'],
+  name: "MovieTicket",
+  props: ["id"],
   components: {
     Loading,
     BookingNav,
-    BookingStep
+    BookingStep,
   },
   data() {
     return {
       isLoad: true,
       movies: null,
       data: null,
-      cinemas: api
-    }
+      cinemas: api,
+    };
   },
   mounted() {
-    this.axios.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=bb6f51bef07465653c3e553d6ab161a8&language=en-US&region=US`).then((response) => {
-      this.movies = response.data.results
-    })
-    this.axios.get(`https://api.themoviedb.org/3/movie/` + this.id + `?api_key=bb6f51bef07465653c3e553d6ab161a8&language=en-US`).then((response) => {
-      this.data = response.data
-    })
+    this.axios
+      .get(
+        `https://api.themoviedb.org/3/movie/now_playing?api_key=bb6f51bef07465653c3e553d6ab161a8&language=en-US&region=US`
+      )
+      .then((response) => {
+        this.movies = response.data.results;
+      });
+    this.axios
+      .get(
+        `https://api.themoviedb.org/3/movie/` +
+          this.id +
+          `?api_key=bb6f51bef07465653c3e553d6ab161a8&language=en-US`
+      )
+      .then((response) => {
+        this.data = response.data;
+      });
   },
   updated: debounce(function () {
     this.$nextTick(() => {
-      this.isLoad = false
-    })
-  }, 1500)
-}
+      this.isLoad = false;
+    });
+  }, 1500),
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

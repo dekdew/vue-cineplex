@@ -6,21 +6,20 @@
 </template>
 
 <script>
-import Navbar from '@/components/Navbar'
+import Navbar from "@/components/Navbar";
 
 export default {
-  name: 'App',
-  components: {Navbar},
-  data(){
-    return {
-    }
-  }
-}
+  name: "App",
+  components: { Navbar },
+  data() {
+    return {};
+  },
+};
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;

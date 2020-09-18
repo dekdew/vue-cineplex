@@ -2,10 +2,16 @@
   <nav class="navbar p1" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <router-link to="/" class="navbar-item">
-        <img src="../assets/logo.png" height="28">
+        <img src="../assets/logo.png" height="28" />
       </router-link>
-      <a role="button" @click="showNav = !showNav" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
-        data-target="navbarBasic">
+      <a
+        role="button"
+        @click="showNav = !showNav"
+        class="navbar-burger burger"
+        aria-label="menu"
+        aria-expanded="false"
+        data-target="navbarBasic"
+      >
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
@@ -15,30 +21,27 @@
       <div class="navbar-end">
         <div class="navbar-item">
           <div v-if="!isLogin" class="buttons">
-            <button class="button is-info" @click="isComponentSignupActive = true;showNav = !showNav">
-              Sing Up
-            </button>
-            <button class="button" @click="isComponentLoginActive = true;showNav = !showNav">
-              Login
-            </button>
+            <button
+              class="button is-info"
+              @click="isComponentSignupActive = true;showNav = !showNav"
+            >Sing Up</button>
+            <button class="button" @click="isComponentLoginActive = true;showNav = !showNav">Login</button>
           </div>
           <div v-if="isLogin">
-            <nav class="" role="navigation" aria-label="dropdown">
+            <nav class role="navigation" aria-label="dropdown">
               <div class="navbar-item has-dropdown is-hoverable">
                 <a class="navbar-link">
-                  <i class="far fa-user-circle"/>&nbsp;Passawit
+                  <i class="far fa-user-circle" />&nbsp;Passawit
                 </a>
 
                 <div class="navbar-dropdown">
-                  <a class="navbar-item">
-                    My Profile
-                  </a>
-                  <router-link to="/myticket" class="navbar-item">
-                    My Tickets
-                  </router-link>
-                  <hr class="navbar-divider">
+                  <a class="navbar-item">My Profile</a>
+                  <router-link to="/myticket" class="navbar-item">My Tickets</router-link>
+                  <hr class="navbar-divider" />
                   <div class="navbar-item">
-                    <button class="button is-small is-fullwidth" @click="logout"><i class="fa fa-sign-out-alt" />&nbsp;Log Out</button>
+                    <button class="button is-small is-fullwidth" @click="logout">
+                      <i class="fa fa-sign-out-alt" />&nbsp;Log Out
+                    </button>
                   </div>
                 </div>
               </div>
@@ -57,43 +60,41 @@
 </template>
 
 <script>
-import SignupForm from '@/components/SignupForm'
-import LoginForm from '@/components/LoginForm'
+import SignupForm from "@/components/SignupForm.vue";
+import LoginForm from "@/components/LoginForm.vue";
 
 export default {
-	name: 'Navbar',
-	components: {
-		SignupForm,
-    LoginForm
+  name: "Navbar",
+  components: {
+    SignupForm,
+    LoginForm,
   },
   data() {
     return {
-			showNav: false,
-			isComponentSignupActive: false,
+      showNav: false,
+      isComponentSignupActive: false,
       signupFormProps: {
-        email: 'passawit@gmail.com',
-				password: 'example',
-				cpassword: 'example'
+        email: "passawit@gmail.com",
+        password: "example",
+        cpassword: "example",
       },
       isComponentLoginActive: false,
       loginFormProps: {
-        email: 'passawit@gmail.com',
-        password: 'example'
-			},
-			isLogin: false
-    }
-	},
-	methods: {
-		login: function (e) {
-			this.isLogin = e
-		},
+        email: "passawit@gmail.com",
+        password: "example",
+      },
+      isLogin: false,
+    };
+  },
+  methods: {
+    login: function (e) {
+      this.isLogin = e;
+    },
     logout: function () {
-      this.isLogin = false
-    }
-	}
-}
-
-
+      this.isLogin = false;
+    },
+  },
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
